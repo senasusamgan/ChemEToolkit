@@ -9,6 +9,7 @@ enum LinearSystemMethod:
 
     case gaussianElimination
     case gaussSeidel
+    case jacobi
 
     var id: String {
         rawValue
@@ -21,6 +22,9 @@ enum LinearSystemMethod:
 
         case .gaussSeidel:
             return "Gauss–Seidel Method"
+
+        case .jacobi:
+            return "Jacobi Method"
         }
     }
 
@@ -31,16 +35,28 @@ enum LinearSystemMethod:
 
         case .gaussSeidel:
             return "Gauss–Seidel"
+
+        case .jacobi:
+            return "Jacobi"
         }
     }
 
     var formula: String {
         switch self {
         case .gaussianElimination:
-            return "Ax = b → Upper Triangular Form → Back Substitution"
+            return """
+            Ax = b → Upper Triangular Form → Back Substitution
+            """
 
         case .gaussSeidel:
-            return "xᵢ⁽ᵏ⁺¹⁾ = [bᵢ − Σⱼ≠ᵢ aᵢⱼxⱼ] / aᵢᵢ"
+            return """
+            xᵢ⁽ᵏ⁺¹⁾ = [bᵢ − Σⱼ<i aᵢⱼxⱼ⁽ᵏ⁺¹⁾ − Σⱼ>i aᵢⱼxⱼ⁽ᵏ⁾] / aᵢᵢ
+            """
+
+        case .jacobi:
+            return """
+            xᵢ⁽ᵏ⁺¹⁾ = [bᵢ − Σⱼ≠ᵢ aᵢⱼxⱼ⁽ᵏ⁾] / aᵢᵢ
+            """
         }
     }
 
@@ -55,6 +71,21 @@ enum LinearSystemMethod:
             return """
             Updates each unknown iteratively using the newest available estimates. Diagonally dominant systems generally converge more reliably.
             """
+
+        case .jacobi:
+            return """
+            Calculates every new estimate using only values from the previous iteration. It is simple and parallelizable, but usually converges more slowly than Gauss–Seidel.
+            """
+        }
+    }
+
+    var isIterative: Bool {
+        switch self {
+        case .gaussianElimination:
+            return false
+
+        case .gaussSeidel, .jacobi:
+            return true
         }
     }
 }

@@ -6,7 +6,8 @@ struct LinearSystemView: View {
     private var selectedMethod:
         LinearSystemMethod = .gaussianElimination
 
-    @State private var systemSize = 3
+    @State
+    private var systemSize = 3
 
     @State
     private var matrixInputs: [[String]] = [
@@ -29,13 +30,17 @@ struct LinearSystemView: View {
         "0"
     ]
 
-    @State private var toleranceInput = "1e-8"
-    @State private var maximumIterationsInput = "100"
+    @State
+    private var toleranceInput = "1e-8"
+
+    @State
+    private var maximumIterationsInput = "100"
 
     @State
     private var result: LinearSystemResult?
 
-    @State private var errorMessage = ""
+    @State
+    private var errorMessage = ""
 
     private let engine =
         LinearSystemEngine()
@@ -45,14 +50,16 @@ struct LinearSystemView: View {
 
     var body: some View {
         ScrollView {
-            VStack(spacing: AppSpacing.xLarge) {
+            VStack(
+                spacing: AppSpacing.xLarge
+            ) {
                 ModuleHeaderView(
                     symbolName:
                         "square.grid.3x3.fill",
                     title:
                         "Linear Systems Solver",
                     subtitle:
-                        "Gaussian Elimination and Gauss–Seidel",
+                        "Gaussian Elimination, Gauss–Seidel, and Jacobi",
                     tint: .blue
                 )
 
@@ -77,17 +84,24 @@ struct LinearSystemView: View {
                     .pageVerticalPadding
             )
         }
-        .navigationTitle("Linear Systems")
-        .onChange(of: selectedMethod) { _, _ in
+        .navigationTitle(
+            "Linear Systems"
+        )
+        .onChange(
+            of: selectedMethod
+        ) { _, _ in
             clearResult()
         }
-        .onChange(of: systemSize) { _, _ in
+        .onChange(
+            of: systemSize
+        ) { _, _ in
             synchronizeInputs()
             clearResult()
         }
     }
 
-    private var calculatorContent: some View {
+    private var calculatorContent:
+        some View {
         VStack(
             alignment: .leading,
             spacing: AppSpacing.large
@@ -100,7 +114,8 @@ struct LinearSystemView: View {
                 selection: $selectedMethod
             ) {
                 ForEach(
-                    LinearSystemMethod.allCases
+                    LinearSystemMethod
+                        .allCases
                 ) { method in
                     Text(method.pickerTitle)
                         .tag(method)
@@ -116,18 +131,25 @@ struct LinearSystemView: View {
 
             matrixSection
 
-            if selectedMethod == .gaussSeidel {
+            if selectedMethod.isIterative {
                 Divider()
+
                 iterativeSettings
             }
 
-            ViewThatFits(in: .horizontal) {
-                HStack(spacing: AppSpacing.small) {
+            ViewThatFits(
+                in: .horizontal
+            ) {
+                HStack(
+                    spacing: AppSpacing.small
+                ) {
                     loadExampleButton
                     clearButton
                 }
 
-                VStack(spacing: AppSpacing.small) {
+                VStack(
+                    spacing: AppSpacing.small
+                ) {
                     loadExampleButton
                     clearButton
                 }
@@ -135,7 +157,8 @@ struct LinearSystemView: View {
 
             PrimaryActionButton(
                 title: "Solve System",
-                systemImage: "equal.circle.fill",
+                systemImage:
+                    "equal.circle.fill",
                 action: solveSystem
             )
 
@@ -153,8 +176,12 @@ struct LinearSystemView: View {
 
     private var methodInformationCard:
         some View {
-        CalculatorInfoCard(tint: .blue) {
-            VStack(spacing: AppSpacing.small) {
+        CalculatorInfoCard(
+            tint: .blue
+        ) {
+            VStack(
+                spacing: AppSpacing.small
+            ) {
                 Text(selectedMethod.title)
                     .font(.headline)
 
@@ -165,12 +192,21 @@ struct LinearSystemView: View {
                             weight: .semibold
                         )
                     )
-                    .multilineTextAlignment(.center)
+                    .multilineTextAlignment(
+                        .center
+                    )
                     .minimumScaleFactor(0.6)
 
-                Text(selectedMethod.explanation)
-                    .foregroundStyle(.secondary)
-                    .multilineTextAlignment(.center)
+                Text(
+                    selectedMethod
+                        .explanation
+                )
+                .foregroundStyle(
+                    .secondary
+                )
+                .multilineTextAlignment(
+                    .center
+                )
             }
             .frame(maxWidth: .infinity)
         }
@@ -186,14 +222,17 @@ struct LinearSystemView: View {
         HStack {
             VStack(
                 alignment: .leading,
-                spacing: AppSpacing.xxSmall
+                spacing:
+                    AppSpacing.xxSmall
             ) {
                 Text("System Size")
                     .font(.headline)
 
                 Text("Ax = b")
                     .font(.caption)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(
+                        .secondary
+                    )
             }
 
             Spacer()
@@ -202,24 +241,30 @@ struct LinearSystemView: View {
                 "System Size",
                 selection: $systemSize
             ) {
-                ForEach(2...5, id: \.self) {
-                    size in
-
-                    Text("\(size) × \(size)")
-                        .tag(size)
+                ForEach(
+                    2...5,
+                    id: \.self
+                ) { size in
+                    Text(
+                        "\(size) × \(size)"
+                    )
+                    .tag(size)
                 }
             }
             .pickerStyle(.menu)
         }
     }
 
-    private var matrixSection: some View {
+    private var matrixSection:
+        some View {
         VStack(
             alignment: .leading,
             spacing: AppSpacing.medium
         ) {
-            Text("Coefficient Matrix and Constants")
-                .font(.headline)
+            Text(
+                "Coefficient Matrix and Constants"
+            )
+            .font(.headline)
 
             Text(
                 "Each row represents one equation."
@@ -241,14 +286,20 @@ struct LinearSystemView: View {
                         matrixRow(row)
                     }
                 }
-                .padding(.bottom, AppSpacing.xSmall)
+                .padding(
+                    .bottom,
+                    AppSpacing.xSmall
+                )
             }
             .scrollIndicators(.visible)
         }
     }
 
-    private var matrixHeader: some View {
-        HStack(spacing: AppSpacing.xSmall) {
+    private var matrixHeader:
+        some View {
+        HStack(
+            spacing: AppSpacing.xSmall
+        ) {
             Text("")
                 .frame(width: 32)
 
@@ -258,7 +309,9 @@ struct LinearSystemView: View {
             ) { column in
                 Text("x\(column + 1)")
                     .font(.caption.bold())
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(
+                        .secondary
+                    )
                     .frame(width: 76)
             }
 
@@ -267,7 +320,9 @@ struct LinearSystemView: View {
 
             Text("b")
                 .font(.caption.bold())
-                .foregroundStyle(.secondary)
+                .foregroundStyle(
+                    .secondary
+                )
                 .frame(width: 76)
         }
     }
@@ -275,13 +330,17 @@ struct LinearSystemView: View {
     private func matrixRow(
         _ row: Int
     ) -> some View {
-        HStack(spacing: AppSpacing.xSmall) {
+        HStack(
+            spacing: AppSpacing.xSmall
+        ) {
             Text("\(row + 1)")
                 .font(
                     .subheadline
                         .monospacedDigit()
                 )
-                .foregroundStyle(.secondary)
+                .foregroundStyle(
+                    .secondary
+                )
                 .frame(width: 32)
 
             ForEach(
@@ -290,12 +349,15 @@ struct LinearSystemView: View {
             ) { column in
                 TextField(
                     "a\(row + 1)\(column + 1)",
-                    text: matrixBinding(
-                        row: row,
-                        column: column
-                    )
+                    text:
+                        matrixBinding(
+                            row: row,
+                            column: column
+                        )
                 )
-                .textFieldStyle(.roundedBorder)
+                .textFieldStyle(
+                    .roundedBorder
+                )
                 .engineeringNumberKeyboard()
                 .frame(width: 76)
                 .accessibilityLabel(
@@ -308,11 +370,14 @@ struct LinearSystemView: View {
 
             TextField(
                 "b\(row + 1)",
-                text: constantBinding(
-                    row: row
-                )
+                text:
+                    constantBinding(
+                        row: row
+                    )
             )
-            .textFieldStyle(.roundedBorder)
+            .textFieldStyle(
+                .roundedBorder
+            )
             .engineeringNumberKeyboard()
             .frame(width: 76)
             .accessibilityLabel(
@@ -321,30 +386,40 @@ struct LinearSystemView: View {
         }
     }
 
-    private var iterativeSettings: some View {
+    private var iterativeSettings:
+        some View {
         VStack(
             alignment: .leading,
             spacing: AppSpacing.medium
         ) {
-            Text("Gauss–Seidel Settings")
-                .font(.headline)
+            Text(
+                "\(selectedMethod.pickerTitle) Settings"
+            )
+            .font(.headline)
 
             Text("Initial Guess")
                 .font(.subheadline.bold())
 
             ScrollView(.horizontal) {
-                HStack(spacing: AppSpacing.small) {
+                HStack(
+                    spacing: AppSpacing.small
+                ) {
                     ForEach(
                         0..<systemSize,
                         id: \.self
                     ) { index in
                         VStack(
                             alignment: .leading,
-                            spacing: AppSpacing.xxSmall
+                            spacing:
+                                AppSpacing.xxSmall
                         ) {
-                            Text("x\(index + 1)")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
+                            Text(
+                                "x\(index + 1)"
+                            )
+                            .font(.caption)
+                            .foregroundStyle(
+                                .secondary
+                            )
 
                             TextField(
                                 "0",
@@ -353,9 +428,14 @@ struct LinearSystemView: View {
                                         index: index
                                     )
                             )
-                            .textFieldStyle(.roundedBorder)
+                            .textFieldStyle(
+                                .roundedBorder
+                            )
                             .engineeringNumberKeyboard()
                             .frame(width: 90)
+                            .accessibilityLabel(
+                                "Initial guess for x\(index + 1)"
+                            )
                         }
                     }
                 }
@@ -365,21 +445,32 @@ struct LinearSystemView: View {
                 title: "Tolerance",
                 symbol: "ε",
                 unit: "",
-                placeholder: "Example: 1e-8",
+                placeholder:
+                    "Example: 1e-8",
                 text: $toleranceInput
             )
 
             CalculatorInputField(
-                title: "Maximum Iterations",
+                title:
+                    "Maximum Iterations",
                 symbol: "N",
                 unit: "",
-                placeholder: "Example: 100",
-                text: $maximumIterationsInput
+                placeholder:
+                    "Example: 100",
+                text:
+                    $maximumIterationsInput
             )
+
+            Text(
+                "Iterative convergence is checked using both the residual norm and the maximum change between consecutive estimates."
+            )
+            .font(.caption)
+            .foregroundStyle(.secondary)
         }
     }
 
-    private var loadExampleButton: some View {
+    private var loadExampleButton:
+        some View {
         Button {
             loadExample()
         } label: {
@@ -392,7 +483,8 @@ struct LinearSystemView: View {
         .buttonStyle(.bordered)
     }
 
-    private var clearButton: some View {
+    private var clearButton:
+        some View {
         Button {
             resetInputs()
         } label: {
@@ -409,18 +501,25 @@ struct LinearSystemView: View {
     private func resultSection(
         _ result: LinearSystemResult
     ) -> some View {
-        VStack(spacing: AppSpacing.large) {
+        VStack(
+            spacing: AppSpacing.large
+        ) {
             CalculationResultCard(
                 items:
-                    result.solution.enumerated()
-                        .map { index, value in
+                    result.solution
+                        .enumerated()
+                        .map {
+                            index,
+                            value in
+
                             CalculationResultDisplayItem(
                                 label:
                                     "Unknown x\(index + 1)",
                                 value:
-                                    numberFormatter.format(
-                                        value
-                                    ),
+                                    numberFormatter
+                                        .format(
+                                            value
+                                        ),
                                 unit: ""
                             )
                         },
@@ -431,13 +530,17 @@ struct LinearSystemView: View {
             )
 
             if !result.converged {
-                CalculatorInfoCard(tint: .orange) {
+                CalculatorInfoCard(
+                    tint: .orange
+                ) {
                     Label(
                         "The method reached the maximum number of iterations before satisfying the requested tolerance.",
                         systemImage:
                             "exclamationmark.triangle.fill"
                     )
-                    .foregroundStyle(.orange)
+                    .foregroundStyle(
+                        .orange
+                    )
                 }
             }
 
@@ -445,14 +548,18 @@ struct LinearSystemView: View {
                 convergenceChart(result)
             }
 
-            resultInformationCard(result)
+            resultInformationCard(
+                result
+            )
         }
     }
 
     private func convergenceChart(
         _ result: LinearSystemResult
     ) -> some View {
-        Chart(result.history) { iteration in
+        Chart(result.history) {
+            iteration in
+
             LineMark(
                 x: .value(
                     "Iteration",
@@ -475,8 +582,12 @@ struct LinearSystemView: View {
                 )
             )
         }
-        .chartXAxisLabel("Iteration")
-        .chartYAxisLabel("Residual Norm")
+        .chartXAxisLabel(
+            "Iteration"
+        )
+        .chartYAxisLabel(
+            "Residual Norm"
+        )
         .frame(height: 260)
         .padding(AppSpacing.small)
         .background(
@@ -484,7 +595,9 @@ struct LinearSystemView: View {
                 cornerRadius:
                     AppTheme.Radius.large
             )
-            .fill(AppTheme.Colors.surface)
+            .fill(
+                AppTheme.Colors.surface
+            )
         )
         .overlay(
             RoundedRectangle(
@@ -496,16 +609,24 @@ struct LinearSystemView: View {
                 lineWidth: 1
             )
         )
+        .accessibilityLabel(
+            "Convergence graph showing residual norm by iteration"
+        )
     }
 
     private func resultInformationCard(
         _ result: LinearSystemResult
     ) -> some View {
-        CalculatorInfoCard(tint: .blue) {
-            VStack(spacing: AppSpacing.small) {
+        CalculatorInfoCard(
+            tint: .blue
+        ) {
+            VStack(
+                spacing: AppSpacing.small
+            ) {
                 informationRow(
                     title: "Method",
-                    value: result.method.title
+                    value:
+                        result.method.title
                 )
 
                 Divider()
@@ -517,20 +638,21 @@ struct LinearSystemView: View {
                 )
 
                 informationRow(
-                    title: "Residual Norm",
+                    title:
+                        "Residual Norm",
                     value:
-                        numberFormatter.format(
-                            result.residualNorm
-                        )
+                        numberFormatter
+                            .format(
+                                result.residualNorm
+                            )
                 )
 
                 informationRow(
                     title: "Iterations",
                     value:
-                        result.method ==
-                            .gaussianElimination
-                        ? "Direct Method"
-                        : "\(result.iterations)"
+                        result.method.isIterative
+                        ? "\(result.iterations)"
+                        : "Direct Method"
                 )
 
                 informationRow(
@@ -549,17 +671,23 @@ struct LinearSystemView: View {
         value: String
     ) -> some View {
         HStack(
-            alignment: .firstTextBaseline,
-            spacing: AppSpacing.medium
+            alignment:
+                .firstTextBaseline,
+            spacing:
+                AppSpacing.medium
         ) {
             Text(title)
-                .foregroundStyle(.secondary)
+                .foregroundStyle(
+                    .secondary
+                )
 
             Spacer()
 
             Text(value)
                 .fontWeight(.semibold)
-                .multilineTextAlignment(.trailing)
+                .multilineTextAlignment(
+                    .trailing
+                )
         }
     }
 
@@ -567,13 +695,18 @@ struct LinearSystemView: View {
         clearResult()
 
         do {
-            let input = try makeInput()
+            let input =
+                try makeInput()
 
-            result = try engine.solve(
-                method: selectedMethod,
-                input: input
-            )
-        } catch let error as CalculationError {
+            result =
+                try engine.solve(
+                    method:
+                        selectedMethod,
+                    input: input
+                )
+        } catch let error
+            as CalculationError {
+
             showCalculationError(error)
         } catch {
             errorMessage =
@@ -583,43 +716,60 @@ struct LinearSystemView: View {
 
     private func makeInput() throws
         -> LinearSystemInput {
-        let matrix = try matrixInputs
-            .enumerated()
-            .map { rowIndex, row in
-                try row.enumerated().map {
-                    columnIndex,
+        let matrix =
+            try matrixInputs
+                .enumerated()
+                .map {
+                    rowIndex,
+                    row in
+
+                    try row
+                        .enumerated()
+                        .map {
+                            columnIndex,
+                            text in
+
+                            try InputValidator
+                                .parseNumber(
+                                    text,
+                                    fieldName:
+                                        "Coefficient a\(rowIndex + 1)\(columnIndex + 1)"
+                                )
+                        }
+                }
+
+        let constants =
+            try constantInputs
+                .enumerated()
+                .map {
+                    index,
                     text in
 
-                    try InputValidator.parseNumber(
-                        text,
-                        fieldName:
-                            "Coefficient a\(rowIndex + 1)\(columnIndex + 1)"
-                    )
+                    try InputValidator
+                        .parseNumber(
+                            text,
+                            fieldName:
+                                "Constant b\(index + 1)"
+                        )
                 }
-            }
-
-        let constants = try constantInputs
-            .enumerated()
-            .map { index, text in
-                try InputValidator.parseNumber(
-                    text,
-                    fieldName:
-                        "Constant b\(index + 1)"
-                )
-            }
 
         let initialGuess: [Double]?
 
-        if selectedMethod == .gaussSeidel {
-            initialGuess = try initialGuessInputs
-                .enumerated()
-                .map { index, text in
-                    try InputValidator.parseNumber(
-                        text,
-                        fieldName:
-                            "Initial guess x\(index + 1)"
-                    )
-                }
+        if selectedMethod.isIterative {
+            initialGuess =
+                try initialGuessInputs
+                    .enumerated()
+                    .map {
+                        index,
+                        text in
+
+                        try InputValidator
+                            .parseNumber(
+                                text,
+                                fieldName:
+                                    "Initial guess x\(index + 1)"
+                            )
+                    }
         } else {
             initialGuess = nil
         }
@@ -627,25 +777,30 @@ struct LinearSystemView: View {
         let tolerance: Double
         let maximumIterations: Int
 
-        if selectedMethod == .gaussSeidel {
+        if selectedMethod.isIterative {
             tolerance =
-                try InputValidator.parseNumber(
-                    toleranceInput,
-                    fieldName: "Tolerance"
-                )
+                try InputValidator
+                    .parseNumber(
+                        toleranceInput,
+                        fieldName:
+                            "Tolerance"
+                    )
 
             let maximumIterationsValue =
-                try InputValidator.parseNumber(
-                    maximumIterationsInput,
-                    fieldName:
-                        "Maximum Iterations"
-                )
+                try InputValidator
+                    .parseNumber(
+                        maximumIterationsInput,
+                        fieldName:
+                            "Maximum Iterations"
+                    )
 
             guard
-                maximumIterationsValue.rounded() ==
+                maximumIterationsValue
+                    .rounded() ==
                     maximumIterationsValue,
                 maximumIterationsValue >= 1,
-                maximumIterationsValue <= 10_000
+                maximumIterationsValue <=
+                    10_000
             else {
                 throw CalculationError
                     .calculationFailed(
@@ -655,7 +810,9 @@ struct LinearSystemView: View {
             }
 
             maximumIterations =
-                Int(maximumIterationsValue)
+                Int(
+                    maximumIterationsValue
+                )
         } else {
             tolerance = 1e-8
             maximumIterations = 100
@@ -664,7 +821,8 @@ struct LinearSystemView: View {
         return LinearSystemInput(
             coefficientMatrix: matrix,
             constants: constants,
-            initialGuess: initialGuess,
+            initialGuess:
+                initialGuess,
             tolerance: tolerance,
             maximumIterations:
                 maximumIterations
@@ -677,10 +835,15 @@ struct LinearSystemView: View {
     ) -> Binding<String> {
         Binding(
             get: {
-                matrixInputs[row][column]
+                matrixInputs[
+                    row
+                ][column]
             },
             set: {
-                matrixInputs[row][column] = $0
+                matrixInputs[
+                    row
+                ][column] = $0
+
                 clearResult()
             }
         )
@@ -705,19 +868,29 @@ struct LinearSystemView: View {
     ) -> Binding<String> {
         Binding(
             get: {
-                initialGuessInputs[index]
+                initialGuessInputs[
+                    index
+                ]
             },
             set: {
-                initialGuessInputs[index] = $0
+                initialGuessInputs[
+                    index
+                ] = $0
+
                 clearResult()
             }
         )
     }
 
     private func synchronizeInputs() {
-        let oldMatrix = matrixInputs
-        let oldConstants = constantInputs
-        let oldGuesses = initialGuessInputs
+        let oldMatrix =
+            matrixInputs
+
+        let oldConstants =
+            constantInputs
+
+        let oldGuesses =
+            initialGuessInputs
 
         matrixInputs = Array(
             repeating:
@@ -738,31 +911,43 @@ struct LinearSystemView: View {
             count: systemSize
         )
 
-        for row in 0..<min(
-            oldMatrix.count,
-            systemSize
-        ) {
-            for column in 0..<min(
-                oldMatrix[row].count,
+        for row in
+            0..<min(
+                oldMatrix.count,
                 systemSize
             ) {
-                matrixInputs[row][column] =
-                    oldMatrix[row][column]
+
+            for column in
+                0..<min(
+                    oldMatrix[row].count,
+                    systemSize
+                ) {
+
+                matrixInputs[
+                    row
+                ][column] =
+                    oldMatrix[
+                        row
+                    ][column]
             }
         }
 
-        for index in 0..<min(
-            oldConstants.count,
-            systemSize
-        ) {
+        for index in
+            0..<min(
+                oldConstants.count,
+                systemSize
+            ) {
+
             constantInputs[index] =
                 oldConstants[index]
         }
 
-        for index in 0..<min(
-            oldGuesses.count,
-            systemSize
-        ) {
+        for index in
+            0..<min(
+                oldGuesses.count,
+                systemSize
+            ) {
+
             initialGuessInputs[index] =
                 oldGuesses[index]
         }
@@ -830,10 +1015,12 @@ struct LinearSystemView: View {
 
         if let suggestion =
             error.recoverySuggestion {
+
             errorMessage =
                 "\(description) \(suggestion)"
         } else {
-            errorMessage = description
+            errorMessage =
+                description
         }
     }
 

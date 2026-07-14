@@ -81,7 +81,8 @@ extension ModuleRegistry {
             NumericalDifferentiationModule.module,
             RootFindingModule.module,
             LinearSystemModule.module,
-            ODESolverModule.module
+            ODESolverModule.module,
+            CurveFittingModule.module
         ]
     )
 }

@@ -13,6 +13,7 @@ enum ModuleID: String, CaseIterable, Codable, Hashable, Identifiable {
     case rootFinding
     case linearSystems
     case odeSolver
+    case curveFitting
     
     var id: String {
         rawValue
