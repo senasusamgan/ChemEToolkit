@@ -6,19 +6,8 @@
 	objectVersion = 77;
 	objects = {
 
-/* Begin PBXContainerItemProxy section */
-		61281B5F30062E7B00B7319E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 610635933005732A006AB87F /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6106359A3005732A006AB87F;
-			remoteInfo = ChemEToolkit;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		6106359B3005732A006AB87F /* ChemEToolkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChemEToolkit.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		61281B5B30062E7B00B7319E /* ChemEToolkitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChemEToolkitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -27,22 +16,10 @@
 			path = ChemEToolkit;
 			sourceTree = "<group>";
 		};
-		61281B5C30062E7B00B7319E /* ChemEToolkitTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = ChemEToolkitTests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		610635983005732A006AB87F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		61281B5830062E7B00B7319E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -56,7 +33,6 @@
 			isa = PBXGroup;
 			children = (
 				6106359D3005732A006AB87F /* ChemEToolkit */,
-				61281B5C30062E7B00B7319E /* ChemEToolkitTests */,
 				6106359C3005732A006AB87F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -65,7 +41,6 @@
 			isa = PBXGroup;
 			children = (
 				6106359B3005732A006AB87F /* ChemEToolkit.app */,
-				61281B5B30062E7B00B7319E /* ChemEToolkitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -95,29 +70,6 @@
 			productReference = 6106359B3005732A006AB87F /* ChemEToolkit.app */;
 			productType = "com.apple.product-type.application";
 		};
-		61281B5A30062E7B00B7319E /* ChemEToolkitTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 61281B6130062E7B00B7319E /* Build configuration list for PBXNativeTarget "ChemEToolkitTests" */;
-			buildPhases = (
-				61281B5730062E7B00B7319E /* Sources */,
-				61281B5830062E7B00B7319E /* Frameworks */,
-				61281B5930062E7B00B7319E /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				61281B6030062E7B00B7319E /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				61281B5C30062E7B00B7319E /* ChemEToolkitTests */,
-			);
-			name = ChemEToolkitTests;
-			packageProductDependencies = (
-			);
-			productName = ChemEToolkitTests;
-			productReference = 61281B5B30062E7B00B7319E /* ChemEToolkitTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -130,10 +82,6 @@
 				TargetAttributes = {
 					6106359A3005732A006AB87F = {
 						CreatedOnToolsVersion = 26.6;
-					};
-					61281B5A30062E7B00B7319E = {
-						CreatedOnToolsVersion = 26.6;
-						TestTargetID = 6106359A3005732A006AB87F;
 					};
 				};
 			};
@@ -152,20 +100,12 @@
 			projectRoot = "";
 			targets = (
 				6106359A3005732A006AB87F /* ChemEToolkit */,
-				61281B5A30062E7B00B7319E /* ChemEToolkitTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		610635993005732A006AB87F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		61281B5930062E7B00B7319E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -182,22 +122,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		61281B5730062E7B00B7319E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		61281B6030062E7B00B7319E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6106359A3005732A006AB87F /* ChemEToolkit */;
-			targetProxy = 61281B5F30062E7B00B7319E /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		610635A43005732C006AB87F /* Debug */ = {
@@ -378,44 +303,6 @@
 			};
 			name = Release;
 		};
-		61281B6230062E7B00B7319E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.senasu.ChemEToolkitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChemEToolkit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChemEToolkit";
-			};
-			name = Debug;
-		};
-		61281B6330062E7B00B7319E /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.senasu.ChemEToolkitTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				STRING_CATALOG_GENERATE_SYMBOLS = NO;
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ChemEToolkit.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ChemEToolkit";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -433,15 +320,6 @@
 			buildConfigurations = (
 				610635A73005732C006AB87F /* Debug */,
 				610635A83005732C006AB87F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		61281B6130062E7B00B7319E /* Build configuration list for PBXNativeTarget "ChemEToolkitTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				61281B6230062E7B00B7319E /* Debug */,
-				61281B6330062E7B00B7319E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
