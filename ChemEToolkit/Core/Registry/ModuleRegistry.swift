@@ -1,12 +1,14 @@
 import SwiftUI
 
 struct ModuleRegistry {
+
     let modules: [AppModule]
 
     var allModules: [AppModule] {
         modules.sorted {
             if $0.metadata.category.sortOrder ==
                 $1.metadata.category.sortOrder {
+
                 return $0.metadata.title <
                     $1.metadata.title
             }
@@ -22,7 +24,9 @@ struct ModuleRegistry {
         }
     }
 
-    var availableCategories: [ModuleCategory] {
+    var availableCategories:
+        [ModuleCategory] {
+
         let registeredCategories = Set(
             modules.map {
                 $0.metadata.category
@@ -31,16 +35,20 @@ struct ModuleRegistry {
 
         return ModuleCategory.allCases
             .filter {
-                registeredCategories.contains($0)
+                registeredCategories.contains(
+                    $0
+                )
             }
             .sorted {
-                $0.sortOrder < $1.sortOrder
+                $0.sortOrder <
+                    $1.sortOrder
             }
     }
 
     func module(
         for id: ModuleID
     ) -> AppModule? {
+
         modules.first {
             $0.id == id
         }
@@ -49,14 +57,17 @@ struct ModuleRegistry {
     func modules(
         in category: ModuleCategory
     ) -> [AppModule] {
+
         allModules.filter {
-            $0.metadata.category == category
+            $0.metadata.category ==
+                category
         }
     }
 
     func search(
         for searchText: String
     ) -> [AppModule] {
+
         allModules.filter {
             $0.metadata.matches(
                 searchText: searchText
@@ -68,6 +79,7 @@ struct ModuleRegistry {
 // MARK: - Live Registry
 
 extension ModuleRegistry {
+
     static let live = ModuleRegistry(
         modules: [
             UnitConverterModule.module,
@@ -76,6 +88,17 @@ extension ModuleRegistry {
             MassBalanceModule.module,
             ReactorDesignModule.module,
             ReactorComparisonModule.module,
+
+            ReynoldsNumberModule.module,
+            BernoulliModule.module,
+            FlowRateModule.module,
+            FrictionFactorModule.module,
+            PressureDropModule.module,
+            MinorLossModule.module,
+            PumpPowerModule.module,
+            HydrostaticPressureModule.module,
+            ManometerModule.module,
+
             NumericalIntegrationModule.module,
             NumericalInterpolationModule.module,
             NumericalDifferentiationModule.module,
