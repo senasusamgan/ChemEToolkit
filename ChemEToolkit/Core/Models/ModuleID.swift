@@ -23,6 +23,14 @@ enum ModuleID:
     case pumpPower
     case hydrostaticPressure
     case uTubeManometer
+    case tankDrainTime
+    case openChannelFlow
+    case froudeNumber
+    case criticalDepth
+    case dragForce
+    case particleSettling
+    case venturiMeter
+    case orificeMeter
 
     case numericalIntegration
     case numericalInterpolation
