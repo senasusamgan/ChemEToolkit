@@ -21,9 +21,23 @@
 		61281B5B30062E7B00B7319E /* ChemEToolkitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChemEToolkitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		617D984A3006AA3500600C43 /* Exceptions for "ChemEToolkit" folder in "ChemEToolkit" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				ChemEToolkitTests/HeatTransfer/ConvectionHeatTransferEngineTests.swift,
+				ChemEToolkitTests/HeatTransfer/PlaneWallConductionEngineTests.swift,
+			);
+			target = 6106359A3005732A006AB87F /* ChemEToolkit */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		6106359D3005732A006AB87F /* ChemEToolkit */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				617D984A3006AA3500600C43 /* Exceptions for "ChemEToolkit" folder in "ChemEToolkit" target */,
+			);
 			path = ChemEToolkit;
 			sourceTree = "<group>";
 		};

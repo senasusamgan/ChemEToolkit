@@ -82,6 +82,11 @@ extension ModuleRegistry {
 
     static let live = ModuleRegistry(
         modules: [
+            
+            // Heat Transfer
+            PlaneWallConductionModule.module,
+            ConvectionHeatTransferModule.module,
+            
             UnitConverterModule.module,
             IdealGasModule.module,
             SolutionConcentrationModule.module,

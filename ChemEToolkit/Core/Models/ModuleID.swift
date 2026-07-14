@@ -6,6 +6,9 @@ enum ModuleID:
     Codable,
     Hashable,
     Identifiable {
+    
+    case planeWallConduction
+    case convectionHeatTransfer
 
     case unitConverter
     case idealGas
@@ -31,6 +34,8 @@ enum ModuleID:
     case particleSettling
     case venturiMeter
     case orificeMeter
+    
+
 
     case numericalIntegration
     case numericalInterpolation
