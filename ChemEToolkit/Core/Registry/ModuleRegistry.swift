@@ -187,6 +187,10 @@ extension ModuleRegistry {
             FixedBedAdsorptionBDSTModule.module,
             CrystallizationYieldMotherLiquorModule.module,
             MSMPRCrystallizerDesignModule.module,
+            IonExchangeBedSizingModule.module,
+            FiniteVolumeDialysisModule.module,
+            ReverseOsmosisPerformanceModule.module,
+            UltrafiltrationConcentrationPolarizationModule.module,
         ]
     )
 }

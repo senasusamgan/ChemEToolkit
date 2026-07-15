@@ -120,4 +120,10 @@ enum ModuleID:
 
     case crystallizationYieldMotherLiquor
     case msmprCrystallizerDesign
+
+    case ionExchangeBedSizing
+    case finiteVolumeDialysis
+
+    case reverseOsmosisPerformance
+    case ultrafiltrationConcentrationPolarization
 }
