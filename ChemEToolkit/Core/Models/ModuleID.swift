@@ -108,4 +108,7 @@ enum ModuleID:
 
     case adsorptionIsotherms
     case dryingRateTime
+
+    case humidificationPsychrometrics
+    case membraneGasSeparation
 }

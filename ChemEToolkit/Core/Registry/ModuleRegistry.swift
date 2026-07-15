@@ -179,6 +179,8 @@ extension ModuleRegistry {
             CountercurrentLiquidLiquidExtractionModule.module,
             AdsorptionIsothermsModule.module,
             DryingRateTimeModule.module,
+            HumidificationPsychrometricsModule.module,
+            MembraneGasSeparationModule.module,
         ]
     )
 }
