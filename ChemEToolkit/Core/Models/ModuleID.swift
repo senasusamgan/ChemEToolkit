@@ -135,4 +135,9 @@ enum ModuleID:
 
     case constantPressureFiltration
     case centrifugalSettlingTime
+
+    case reactionRateCalculator
+    case rateLawBuilder
+    case reactionOrderDetermination
+    case rateConstantCalculation
 }

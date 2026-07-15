@@ -120,6 +120,10 @@ extension ModuleRegistry {
             MassBalanceModule.module,
             ReactorDesignModule.module,
             ReactorComparisonModule.module,
+            ReactionRateCalculatorModule.module,
+            RateLawBuilderModule.module,
+            ReactionOrderDeterminationModule.module,
+            RateConstantCalculationModule.module,
             
             
 //          Fluid Mechanics
