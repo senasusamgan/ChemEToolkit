@@ -145,4 +145,9 @@ enum ModuleID:
     case activationEnergyTwoPoint
     case rateConstantTemperatureShift
     case arrheniusThreePointFit
+
+    case conversionYieldSelectivity
+    case constantVolumeStoichiometry
+    case spaceTimeSpaceVelocity
+    case levenspielPlotSizing
 }

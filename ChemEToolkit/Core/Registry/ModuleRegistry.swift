@@ -128,6 +128,10 @@ extension ModuleRegistry {
             ActivationEnergyTwoPointModule.module,
             RateConstantTemperatureShiftModule.module,
             ArrheniusThreePointFitModule.module,
+            ConversionYieldSelectivityModule.module,
+            ConstantVolumeStoichiometryModule.module,
+            SpaceTimeSpaceVelocityModule.module,
+            LevenspielPlotSizingModule.module,
             
             
 //          Fluid Mechanics
