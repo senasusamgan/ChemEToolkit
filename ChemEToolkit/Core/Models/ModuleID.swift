@@ -15,6 +15,8 @@ enum ModuleID:
     case heatExchangerLMTD
     case heatExchangerAreaSizing
     case heatExchangerEffectivenessNTU
+    case doublePipeHeatExchanger
+    case shellAndTubeHeatExchanger
 
     case unitConverter
     case idealGas

@@ -92,6 +92,8 @@ extension ModuleRegistry {
             HeatExchangerLMTDModule.module,
             HeatExchangerAreaSizingModule.module,
             HeatExchangerEffectivenessNTUModule.module,
+            DoublePipeHeatExchangerModule.module,
+            ShellAndTubeHeatExchangerModule.module,
             
 
             UnitConverterModule.module,
