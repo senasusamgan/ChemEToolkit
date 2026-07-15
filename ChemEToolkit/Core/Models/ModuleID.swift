@@ -9,6 +9,8 @@ enum ModuleID:
     
     case planeWallConduction
     case convectionHeatTransfer
+    case compositeWallConduction
+    case cylindricalWallConduction
 
     case unitConverter
     case idealGas

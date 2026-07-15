@@ -86,14 +86,20 @@ extension ModuleRegistry {
             // Heat Transfer
             PlaneWallConductionModule.module,
             ConvectionHeatTransferModule.module,
+            CompositeWallConductionModule.module,
+            CylindricalWallConductionModule.module,
             
+            
+
             UnitConverterModule.module,
             IdealGasModule.module,
             SolutionConcentrationModule.module,
             MassBalanceModule.module,
             ReactorDesignModule.module,
             ReactorComparisonModule.module,
-
+            
+            
+//          Fluid Mechanics
             ReynoldsNumberModule.module,
             BernoulliModule.module,
             FlowRateModule.module,
@@ -112,6 +118,7 @@ extension ModuleRegistry {
             VenturiMeterModule.module,
             OrificeMeterModule.module,
 
+//          Numerical Methods
             NumericalIntegrationModule.module,
             NumericalInterpolationModule.module,
             NumericalDifferentiationModule.module,
