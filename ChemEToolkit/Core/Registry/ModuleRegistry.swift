@@ -124,6 +124,10 @@ extension ModuleRegistry {
             RateLawBuilderModule.module,
             ReactionOrderDeterminationModule.module,
             RateConstantCalculationModule.module,
+            ArrheniusRateConstantModule.module,
+            ActivationEnergyTwoPointModule.module,
+            RateConstantTemperatureShiftModule.module,
+            ArrheniusThreePointFitModule.module,
             
             
 //          Fluid Mechanics

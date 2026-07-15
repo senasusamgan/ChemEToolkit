@@ -140,4 +140,9 @@ enum ModuleID:
     case rateLawBuilder
     case reactionOrderDetermination
     case rateConstantCalculation
+
+    case arrheniusRateConstant
+    case activationEnergyTwoPoint
+    case rateConstantTemperatureShift
+    case arrheniusThreePointFit
 }
