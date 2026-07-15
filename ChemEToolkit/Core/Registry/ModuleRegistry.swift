@@ -100,6 +100,12 @@ extension ModuleRegistry {
             CombinedConvectionRadiationModule.module,
             
 
+            PrandtlNumberModule.module,
+            NusseltNumberModule.module,
+            GrashofNumberModule.module,
+            RayleighNumberModule.module,
+            BiotNumberModule.module,
+            FourierNumberModule.module,
             UnitConverterModule.module,
             IdealGasModule.module,
             SolutionConcentrationModule.module,

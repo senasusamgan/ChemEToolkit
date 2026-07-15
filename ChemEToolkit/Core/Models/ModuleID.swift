@@ -22,6 +22,12 @@ enum ModuleID:
     case thermalRadiation
     case combinedConvectionRadiation
 
+    case prandtlNumber
+    case nusseltNumber
+    case grashofNumber
+    case rayleighNumber
+    case biotNumber
+    case fourierNumber
     case unitConverter
     case idealGas
     case solutionConcentration
