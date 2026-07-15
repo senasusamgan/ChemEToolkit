@@ -132,6 +132,10 @@ extension ModuleRegistry {
             ConstantVolumeStoichiometryModule.module,
             SpaceTimeSpaceVelocityModule.module,
             LevenspielPlotSizingModule.module,
+            CSTRsInSeriesModule.module,
+            PFRSectionsModule.module,
+            CSTRPFRSequenceModule.module,
+            RecyclePFRModule.module,
             
             
 //          Fluid Mechanics

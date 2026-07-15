@@ -150,4 +150,9 @@ enum ModuleID:
     case constantVolumeStoichiometry
     case spaceTimeSpaceVelocity
     case levenspielPlotSizing
+
+    case cstrsInSeries
+    case pfrSections
+    case cstrPFRSequence
+    case recyclePFR
 }
