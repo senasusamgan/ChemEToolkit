@@ -155,4 +155,9 @@ enum ModuleID:
     case pfrSections
     case cstrPFRSequence
     case recyclePFR
+
+    case packedBedReactorDesign
+    case catalystWeightFromRateData
+    case packedBedPressureDrop
+    case pbrPressureDropEffects
 }

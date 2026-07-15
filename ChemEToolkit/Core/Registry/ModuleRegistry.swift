@@ -136,6 +136,10 @@ extension ModuleRegistry {
             PFRSectionsModule.module,
             CSTRPFRSequenceModule.module,
             RecyclePFRModule.module,
+            PackedBedReactorDesignModule.module,
+            CatalystWeightFromRateDataModule.module,
+            PackedBedPressureDropModule.module,
+            PBRPressureDropEffectsModule.module,
             
             
 //          Fluid Mechanics
