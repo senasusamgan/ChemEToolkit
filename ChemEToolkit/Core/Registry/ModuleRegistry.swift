@@ -185,6 +185,8 @@ extension ModuleRegistry {
             CountercurrentSolidsWashingModule.module,
             BatchAdsorptionDesignModule.module,
             FixedBedAdsorptionBDSTModule.module,
+            CrystallizationYieldMotherLiquorModule.module,
+            MSMPRCrystallizerDesignModule.module,
         ]
     )
 }

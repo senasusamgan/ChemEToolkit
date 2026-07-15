@@ -117,4 +117,7 @@ enum ModuleID:
 
     case batchAdsorptionDesign
     case fixedBedAdsorptionBDST
+
+    case crystallizationYieldMotherLiquor
+    case msmprCrystallizerDesign
 }
