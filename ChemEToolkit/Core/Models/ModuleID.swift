@@ -160,4 +160,9 @@ enum ModuleID:
     case catalystWeightFromRateData
     case packedBedPressureDrop
     case pbrPressureDropEffects
+
+    case parallelReactions
+    case seriesReactions
+    case seriesParallelReactions
+    case reversibleReactions
 }

@@ -140,6 +140,10 @@ extension ModuleRegistry {
             CatalystWeightFromRateDataModule.module,
             PackedBedPressureDropModule.module,
             PBRPressureDropEffectsModule.module,
+            ParallelReactionsModule.module,
+            SeriesReactionsModule.module,
+            SeriesParallelReactionsModule.module,
+            ReversibleReactionsModule.module,
             
             
 //          Fluid Mechanics
