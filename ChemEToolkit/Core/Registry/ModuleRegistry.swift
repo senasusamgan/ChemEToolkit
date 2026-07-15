@@ -181,6 +181,8 @@ extension ModuleRegistry {
             DryingRateTimeModule.module,
             HumidificationPsychrometricsModule.module,
             MembraneGasSeparationModule.module,
+            SingleStageLeachingRecoveryModule.module,
+            CountercurrentSolidsWashingModule.module,
         ]
     )
 }

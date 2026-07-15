@@ -111,4 +111,7 @@ enum ModuleID:
 
     case humidificationPsychrometrics
     case membraneGasSeparation
+
+    case singleStageLeachingRecovery
+    case countercurrentSolidsWashing
 }
