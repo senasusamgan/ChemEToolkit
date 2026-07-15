@@ -19,6 +19,8 @@ enum ModuleID:
     case shellAndTubeHeatExchanger
     case finHeatTransfer
     case criticalRadiusOfInsulation
+    case thermalRadiation
+    case combinedConvectionRadiation
 
     case unitConverter
     case idealGas

@@ -96,6 +96,8 @@ extension ModuleRegistry {
             ShellAndTubeHeatExchangerModule.module,
             FinHeatTransferModule.module,
             CriticalRadiusOfInsulationModule.module,
+            ThermalRadiationModule.module,
+            CombinedConvectionRadiationModule.module,
             
 
             UnitConverterModule.module,
