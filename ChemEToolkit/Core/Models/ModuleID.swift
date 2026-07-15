@@ -32,6 +32,10 @@ enum ModuleID:
     case thermalResistanceNetwork
     case lumpedCapacitance
     case foulingAnalysis
+    case forcedConvectionCorrelation
+    case naturalConvectionCorrelation
+    case boilingHeatTransfer
+    case condensationHeatTransfer
     case unitConverter
     case idealGas
     case solutionConcentration
