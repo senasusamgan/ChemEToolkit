@@ -74,4 +74,16 @@ enum ModuleID:
     var id: String {
         rawValue
     }
+
+    case ficksFirstLaw
+    case dimensionlessMassTransfer
+    case steadyStateDiffusion
+    case equimolarCounterDiffusion
+    case stagnantFilmDiffusion
+    case massTransferCoefficient
+
+    case gasPhaseDiffusivity
+    case liquidPhaseDiffusivity
+    case convectiveMassTransferCorrelations
+    case chiltonColburnAnalogy
 }

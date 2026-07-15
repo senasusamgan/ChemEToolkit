@@ -99,7 +99,7 @@ extension ModuleRegistry {
             ThermalRadiationModule.module,
             CombinedConvectionRadiationModule.module,
             
-
+//          Heat Transfer
             PrandtlNumberModule.module,
             NusseltNumberModule.module,
             GrashofNumberModule.module,
@@ -148,7 +148,20 @@ extension ModuleRegistry {
             RootFindingModule.module,
             LinearSystemModule.module,
             ODESolverModule.module,
-            CurveFittingModule.module
+            CurveFittingModule.module,
+            
+            
+//          Mass Transfer
+            FicksFirstLawModule.module,
+            DimensionlessMassTransferModule.module,
+            SteadyStateDiffusionModule.module,
+            EquimolarCounterDiffusionModule.module,
+            StagnantFilmDiffusionModule.module,
+            MassTransferCoefficientModule.module,
+            GasPhaseDiffusivityModule.module,
+            LiquidPhaseDiffusivityModule.module,
+            ConvectiveMassTransferCorrelationsModule.module,
+            ChiltonColburnAnalogyModule.module,
         ]
     )
 }
