@@ -28,6 +28,10 @@ enum ModuleID:
     case rayleighNumber
     case biotNumber
     case fourierNumber
+    case sphericalWallConduction
+    case thermalResistanceNetwork
+    case lumpedCapacitance
+    case foulingAnalysis
     case unitConverter
     case idealGas
     case solutionConcentration
