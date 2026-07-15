@@ -86,4 +86,8 @@ enum ModuleID:
     case liquidPhaseDiffusivity
     case convectiveMassTransferCorrelations
     case chiltonColburnAnalogy
+
+    case interphaseEquilibriumDrivingForces
+    case twoFilmTheory
+    case overallMassTransferCoefficient
 }

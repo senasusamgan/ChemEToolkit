@@ -162,6 +162,9 @@ extension ModuleRegistry {
             LiquidPhaseDiffusivityModule.module,
             ConvectiveMassTransferCorrelationsModule.module,
             ChiltonColburnAnalogyModule.module,
+            InterphaseEquilibriumDrivingForcesModule.module,
+            TwoFilmTheoryModule.module,
+            OverallMassTransferCoefficientModule.module,
         ]
     )
 }
