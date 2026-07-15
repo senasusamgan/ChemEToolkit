@@ -95,4 +95,9 @@ enum ModuleID:
     case kremserMethod
     case packedColumnHTUNTUDesign
     case packedColumnHydraulics
+
+    case relativeVolatilityBinaryVLE
+    case binaryFlashCalculation
+    case distillationOperatingLines
+    case mcCabeThieleMethod
 }

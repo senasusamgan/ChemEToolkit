@@ -169,6 +169,10 @@ extension ModuleRegistry {
             KremserMethodModule.module,
             PackedColumnHTUNTUDesignModule.module,
             PackedColumnHydraulicsModule.module,
+            RelativeVolatilityBinaryVLEModule.module,
+            BinaryFlashCalculationModule.module,
+            DistillationOperatingLinesModule.module,
+            McCabeThieleMethodModule.module,
         ]
     )
 }
