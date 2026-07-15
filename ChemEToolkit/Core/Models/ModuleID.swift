@@ -100,4 +100,9 @@ enum ModuleID:
     case binaryFlashCalculation
     case distillationOperatingLines
     case mcCabeThieleMethod
+
+    case distributionCoefficientSelectivity
+    case singleStageLiquidLiquidExtraction
+    case crosscurrentLiquidLiquidExtraction
+    case countercurrentLiquidLiquidExtraction
 }

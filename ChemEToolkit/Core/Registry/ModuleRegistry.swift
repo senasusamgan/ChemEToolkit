@@ -173,6 +173,10 @@ extension ModuleRegistry {
             BinaryFlashCalculationModule.module,
             DistillationOperatingLinesModule.module,
             McCabeThieleMethodModule.module,
+            DistributionCoefficientSelectivityModule.module,
+            SingleStageLiquidLiquidExtractionModule.module,
+            CrosscurrentLiquidLiquidExtractionModule.module,
+            CountercurrentLiquidLiquidExtractionModule.module,
         ]
     )
 }
