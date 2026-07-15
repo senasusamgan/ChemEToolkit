@@ -88,6 +88,8 @@ extension ModuleRegistry {
             ConvectionHeatTransferModule.module,
             CompositeWallConductionModule.module,
             CylindricalWallConductionModule.module,
+            OverallHeatTransferCoefficientModule.module,
+            HeatExchangerLMTDModule.module,
             
             
 

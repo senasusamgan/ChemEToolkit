@@ -11,6 +11,8 @@ enum ModuleID:
     case convectionHeatTransfer
     case compositeWallConduction
     case cylindricalWallConduction
+    case overallHeatTransferCoefficient
+    case heatExchangerLMTD
 
     case unitConverter
     case idealGas
