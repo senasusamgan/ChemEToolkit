@@ -17,6 +17,8 @@ enum ModuleID:
     case heatExchangerEffectivenessNTU
     case doublePipeHeatExchanger
     case shellAndTubeHeatExchanger
+    case finHeatTransfer
+    case criticalRadiusOfInsulation
 
     case unitConverter
     case idealGas

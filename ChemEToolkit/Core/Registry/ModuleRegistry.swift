@@ -94,6 +94,8 @@ extension ModuleRegistry {
             HeatExchangerEffectivenessNTUModule.module,
             DoublePipeHeatExchangerModule.module,
             ShellAndTubeHeatExchangerModule.module,
+            FinHeatTransferModule.module,
+            CriticalRadiusOfInsulationModule.module,
             
 
             UnitConverterModule.module,
