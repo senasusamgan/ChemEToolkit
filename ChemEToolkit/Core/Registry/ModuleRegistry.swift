@@ -177,6 +177,8 @@ extension ModuleRegistry {
             SingleStageLiquidLiquidExtractionModule.module,
             CrosscurrentLiquidLiquidExtractionModule.module,
             CountercurrentLiquidLiquidExtractionModule.module,
+            AdsorptionIsothermsModule.module,
+            DryingRateTimeModule.module,
         ]
     )
 }

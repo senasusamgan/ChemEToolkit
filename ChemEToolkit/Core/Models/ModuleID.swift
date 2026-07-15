@@ -105,4 +105,7 @@ enum ModuleID:
     case singleStageLiquidLiquidExtraction
     case crosscurrentLiquidLiquidExtraction
     case countercurrentLiquidLiquidExtraction
+
+    case adsorptionIsotherms
+    case dryingRateTime
 }
