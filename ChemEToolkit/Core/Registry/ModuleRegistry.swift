@@ -165,6 +165,10 @@ extension ModuleRegistry {
             InterphaseEquilibriumDrivingForcesModule.module,
             TwoFilmTheoryModule.module,
             OverallMassTransferCoefficientModule.module,
+            GasAbsorptionStrippingFundamentalsModule.module,
+            KremserMethodModule.module,
+            PackedColumnHTUNTUDesignModule.module,
+            PackedColumnHydraulicsModule.module,
         ]
     )
 }

@@ -90,4 +90,9 @@ enum ModuleID:
     case interphaseEquilibriumDrivingForces
     case twoFilmTheory
     case overallMassTransferCoefficient
+
+    case gasAbsorptionStrippingFundamentals
+    case kremserMethod
+    case packedColumnHTUNTUDesign
+    case packedColumnHydraulics
 }
