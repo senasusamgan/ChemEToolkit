@@ -183,6 +183,8 @@ extension ModuleRegistry {
             MembraneGasSeparationModule.module,
             SingleStageLeachingRecoveryModule.module,
             CountercurrentSolidsWashingModule.module,
+            BatchAdsorptionDesignModule.module,
+            FixedBedAdsorptionBDSTModule.module,
         ]
     )
 }

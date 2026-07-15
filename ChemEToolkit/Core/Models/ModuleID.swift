@@ -114,4 +114,7 @@ enum ModuleID:
 
     case singleStageLeachingRecovery
     case countercurrentSolidsWashing
+
+    case batchAdsorptionDesign
+    case fixedBedAdsorptionBDST
 }
