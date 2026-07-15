@@ -144,6 +144,10 @@ extension ModuleRegistry {
             SeriesReactionsModule.module,
             SeriesParallelReactionsModule.module,
             ReversibleReactionsModule.module,
+            EquilibriumConversionModule.module,
+            AdiabaticBatchReactorModule.module,
+            AdiabaticCSTRModule.module,
+            AdiabaticPFRModule.module,
             
             
 //          Fluid Mechanics

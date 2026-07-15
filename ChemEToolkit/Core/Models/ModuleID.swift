@@ -165,4 +165,9 @@ enum ModuleID:
     case seriesReactions
     case seriesParallelReactions
     case reversibleReactions
+
+    case equilibriumConversion
+    case adiabaticBatchReactor
+    case adiabaticCSTR
+    case adiabaticPFR
 }
