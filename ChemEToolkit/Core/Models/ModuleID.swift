@@ -13,6 +13,8 @@ enum ModuleID:
     case cylindricalWallConduction
     case overallHeatTransferCoefficient
     case heatExchangerLMTD
+    case heatExchangerAreaSizing
+    case heatExchangerEffectivenessNTU
 
     case unitConverter
     case idealGas

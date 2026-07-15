@@ -90,7 +90,8 @@ extension ModuleRegistry {
             CylindricalWallConductionModule.module,
             OverallHeatTransferCoefficientModule.module,
             HeatExchangerLMTDModule.module,
-            
+            HeatExchangerAreaSizingModule.module,
+            HeatExchangerEffectivenessNTUModule.module,
             
 
             UnitConverterModule.module,
