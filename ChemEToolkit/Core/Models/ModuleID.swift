@@ -126,4 +126,13 @@ enum ModuleID:
 
     case reverseOsmosisPerformance
     case ultrafiltrationConcentrationPolarization
+
+    case ficksSecondLaw
+    case effectiveDiffusivity
+
+    case diffusionThroughMembrane
+    case betIsotherm
+
+    case constantPressureFiltration
+    case centrifugalSettlingTime
 }

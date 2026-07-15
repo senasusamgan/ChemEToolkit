@@ -191,6 +191,12 @@ extension ModuleRegistry {
             FiniteVolumeDialysisModule.module,
             ReverseOsmosisPerformanceModule.module,
             UltrafiltrationConcentrationPolarizationModule.module,
+            FicksSecondLawModule.module,
+            EffectiveDiffusivityModule.module,
+            DiffusionThroughMembraneModule.module,
+            BETIsothermModule.module,
+            ConstantPressureFiltrationModule.module,
+            CentrifugalSettlingTimeModule.module,
         ]
     )
 }
