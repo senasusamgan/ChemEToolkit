@@ -200,4 +200,9 @@ enum ModuleID:
     case catalystRegenerationCycle
     case deactivatingPackedBedReactor
     case catalystTimeOnStream
+
+    case michaelisMentenReactor
+    case enzymeBatchReactor
+    case immobilizedEnzymeReactor
+    case monodBioreactorDesign
 }

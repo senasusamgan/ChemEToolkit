@@ -172,6 +172,10 @@ extension ModuleRegistry {
             CatalystRegenerationCycleModule.module,
             DeactivatingPackedBedReactorModule.module,
             CatalystTimeOnStreamModule.module,
+            MichaelisMentenReactorModule.module,
+            EnzymeBatchReactorModule.module,
+            ImmobilizedEnzymeReactorModule.module,
+            MonodBioreactorDesignModule.module,
             
             
 //          Fluid Mechanics
