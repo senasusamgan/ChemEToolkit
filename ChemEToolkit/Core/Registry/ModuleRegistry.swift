@@ -192,6 +192,10 @@ extension ModuleRegistry {
             ZieglerNicholsReactionCurveTuningModule.module,
             CohenCoonTuningModule.module,
             IMCControllerTuningModule.module,
+            FirstOrderFrequencyResponseModule.module,
+            SecondOrderFrequencyResponseModule.module,
+            ClosedLoopFeedbackAnalysisModule.module,
+            CubicRouthHurwitzStabilityModule.module,
             
             
 //          Fluid Mechanics

@@ -225,4 +225,9 @@ enum ModuleID:
     case zieglerNicholsReactionCurveTuning
     case cohenCoonTuning
     case imcControllerTuning
+
+    case firstOrderFrequencyResponse
+    case secondOrderFrequencyResponse
+    case closedLoopFeedbackAnalysis
+    case cubicRouthHurwitzStability
 }
