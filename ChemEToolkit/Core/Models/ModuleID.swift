@@ -170,4 +170,9 @@ enum ModuleID:
     case adiabaticBatchReactor
     case adiabaticCSTR
     case adiabaticPFR
+
+    case heatExchangeBatchReactor
+    case heatExchangeCSTR
+    case heatExchangePFR
+    case nonIsothermalCSTRSteadyStates
 }

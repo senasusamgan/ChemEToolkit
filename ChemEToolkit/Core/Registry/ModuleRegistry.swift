@@ -148,6 +148,10 @@ extension ModuleRegistry {
             AdiabaticBatchReactorModule.module,
             AdiabaticCSTRModule.module,
             AdiabaticPFRModule.module,
+            HeatExchangeBatchReactorModule.module,
+            HeatExchangeCSTRModule.module,
+            HeatExchangePFRModule.module,
+            NonIsothermalCSTRSteadyStatesModule.module,
             
             
 //          Fluid Mechanics
