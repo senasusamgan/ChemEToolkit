@@ -215,4 +215,9 @@ enum ModuleID:
     case firstOrderPlusDeadTimeProcess
     case secondOrderProcessResponse
     case integratingProcessResponse
+
+    case proportionalController
+    case piController
+    case pdController
+    case pidController
 }

@@ -184,6 +184,10 @@ extension ModuleRegistry {
             FirstOrderPlusDeadTimeProcessModule.module,
             SecondOrderProcessResponseModule.module,
             IntegratingProcessResponseModule.module,
+            ProportionalControllerModule.module,
+            PIControllerModule.module,
+            PDControllerModule.module,
+            PIDControllerModule.module,
             
             
 //          Fluid Mechanics
