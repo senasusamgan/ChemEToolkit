@@ -152,6 +152,14 @@ extension ModuleRegistry {
             HeatExchangeCSTRModule.module,
             HeatExchangePFRModule.module,
             NonIsothermalCSTRSteadyStatesModule.module,
+            RTDMomentsModule.module,
+            TanksInSeriesRTDModule.module,
+            AxialDispersionRTDModule.module,
+            ConversionFromRTDModule.module,
+            ECurveGeneratorModule.module,
+            FCurveGeneratorModule.module,
+            SegregationModelConversionModule.module,
+            RTDModelComparisonModule.module,
             
             
 //          Fluid Mechanics

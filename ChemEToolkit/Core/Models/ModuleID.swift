@@ -175,4 +175,14 @@ enum ModuleID:
     case heatExchangeCSTR
     case heatExchangePFR
     case nonIsothermalCSTRSteadyStates
+
+    case rtdMoments
+    case tanksInSeriesRTD
+    case axialDispersionRTD
+    case conversionFromRTD
+
+    case eCurveGenerator
+    case fCurveGenerator
+    case segregationModelConversion
+    case rtdModelComparison
 }
