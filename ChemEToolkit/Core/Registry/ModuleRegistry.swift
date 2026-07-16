@@ -200,6 +200,10 @@ extension ModuleRegistry {
             InverseLaplaceTransformHelperModule.module,
             TransferFunctionBuilderModule.module,
             BlockDiagramAlgebraModule.module,
+            NonInteractingTankSystemModule.module,
+            InteractingTankSystemModule.module,
+            LiquidLevelDynamicsModule.module,
+            TemperatureProcessDynamicsModule.module,
             
             
 //          Fluid Mechanics

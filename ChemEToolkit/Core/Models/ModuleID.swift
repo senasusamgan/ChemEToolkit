@@ -235,4 +235,9 @@ enum ModuleID:
     case inverseLaplaceTransformHelper
     case transferFunctionBuilder
     case blockDiagramAlgebra
+
+    case nonInteractingTankSystem
+    case interactingTankSystem
+    case liquidLevelDynamics
+    case temperatureProcessDynamics
 }
