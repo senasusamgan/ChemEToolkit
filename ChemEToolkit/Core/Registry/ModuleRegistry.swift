@@ -188,6 +188,10 @@ extension ModuleRegistry {
             PIControllerModule.module,
             PDControllerModule.module,
             PIDControllerModule.module,
+            ZieglerNicholsUltimateGainTuningModule.module,
+            ZieglerNicholsReactionCurveTuningModule.module,
+            CohenCoonTuningModule.module,
+            IMCControllerTuningModule.module,
             
             
 //          Fluid Mechanics

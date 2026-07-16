@@ -220,4 +220,9 @@ enum ModuleID:
     case piController
     case pdController
     case pidController
+
+    case zieglerNicholsUltimateGainTuning
+    case zieglerNicholsReactionCurveTuning
+    case cohenCoonTuning
+    case imcControllerTuning
 }
