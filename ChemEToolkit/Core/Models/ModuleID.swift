@@ -230,4 +230,9 @@ enum ModuleID:
     case secondOrderFrequencyResponse
     case closedLoopFeedbackAnalysis
     case cubicRouthHurwitzStability
+
+    case laplaceTransformHelper
+    case inverseLaplaceTransformHelper
+    case transferFunctionBuilder
+    case blockDiagramAlgebra
 }

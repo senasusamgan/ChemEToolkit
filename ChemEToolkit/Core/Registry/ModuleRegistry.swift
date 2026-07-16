@@ -196,6 +196,10 @@ extension ModuleRegistry {
             SecondOrderFrequencyResponseModule.module,
             ClosedLoopFeedbackAnalysisModule.module,
             CubicRouthHurwitzStabilityModule.module,
+            LaplaceTransformHelperModule.module,
+            InverseLaplaceTransformHelperModule.module,
+            TransferFunctionBuilderModule.module,
+            BlockDiagramAlgebraModule.module,
             
             
 //          Fluid Mechanics
