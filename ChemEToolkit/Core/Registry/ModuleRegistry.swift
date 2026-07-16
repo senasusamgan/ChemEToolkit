@@ -180,6 +180,10 @@ extension ModuleRegistry {
             ReactiveDistillationBasicsModule.module,
             ReactorOptimizationModule.module,
             EconomicReactorSelectionModule.module,
+            FirstOrderProcessResponseModule.module,
+            FirstOrderPlusDeadTimeProcessModule.module,
+            SecondOrderProcessResponseModule.module,
+            IntegratingProcessResponseModule.module,
             
             
 //          Fluid Mechanics

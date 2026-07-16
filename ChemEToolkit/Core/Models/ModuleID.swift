@@ -210,4 +210,9 @@ enum ModuleID:
     case reactiveDistillationBasics
     case reactorOptimization
     case economicReactorSelection
+
+    case firstOrderProcessResponse
+    case firstOrderPlusDeadTimeProcess
+    case secondOrderProcessResponse
+    case integratingProcessResponse
 }
