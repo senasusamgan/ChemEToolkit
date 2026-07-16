@@ -240,4 +240,9 @@ enum ModuleID:
     case interactingTankSystem
     case liquidLevelDynamics
     case temperatureProcessDynamics
+
+    case pressureProcessDynamics
+    case openLoopResponse
+    case feedforwardControl
+    case cascadeControl
 }

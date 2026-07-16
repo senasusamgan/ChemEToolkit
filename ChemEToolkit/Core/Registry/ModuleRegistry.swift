@@ -204,6 +204,10 @@ extension ModuleRegistry {
             InteractingTankSystemModule.module,
             LiquidLevelDynamicsModule.module,
             TemperatureProcessDynamicsModule.module,
+            PressureProcessDynamicsModule.module,
+            OpenLoopResponseModule.module,
+            FeedforwardControlModule.module,
+            CascadeControlModule.module,
             
             
 //          Fluid Mechanics
