@@ -208,6 +208,10 @@ extension ModuleRegistry {
             OpenLoopResponseModule.module,
             FeedforwardControlModule.module,
             CascadeControlModule.module,
+            RatioControlModule.module,
+            SplitRangeControlModule.module,
+            OverrideSelectiveControlModule.module,
+            SmithPredictorModule.module,
             
             
 //          Fluid Mechanics

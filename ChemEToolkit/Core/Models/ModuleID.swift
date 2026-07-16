@@ -245,4 +245,9 @@ enum ModuleID:
     case openLoopResponse
     case feedforwardControl
     case cascadeControl
+
+    case ratioControl
+    case splitRangeControl
+    case overrideSelectiveControl
+    case smithPredictor
 }
