@@ -185,4 +185,14 @@ enum ModuleID:
     case fCurveGenerator
     case segregationModelConversion
     case rtdModelComparison
+
+    case deadVolumeEstimator
+    case bypassFractionEstimator
+    case bypassDeadVolumeReactor
+    case stepResponseRTDAnalysis
+
+    case multipleReactionsPFR
+    case multipleReactionsCSTR
+    case autocatalyticBatchReactor
+    case semibatchReactor
 }

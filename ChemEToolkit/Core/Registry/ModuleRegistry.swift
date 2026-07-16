@@ -160,6 +160,14 @@ extension ModuleRegistry {
             FCurveGeneratorModule.module,
             SegregationModelConversionModule.module,
             RTDModelComparisonModule.module,
+            DeadVolumeEstimatorModule.module,
+            BypassFractionEstimatorModule.module,
+            BypassDeadVolumeReactorModule.module,
+            StepResponseRTDAnalysisModule.module,
+            MultipleReactionsPFRModule.module,
+            MultipleReactionsCSTRModule.module,
+            AutocatalyticBatchReactorModule.module,
+            SemibatchReactorModule.module,
             
             
 //          Fluid Mechanics
