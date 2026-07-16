@@ -168,6 +168,10 @@ extension ModuleRegistry {
             MultipleReactionsCSTRModule.module,
             AutocatalyticBatchReactorModule.module,
             SemibatchReactorModule.module,
+            CatalystDeactivationKineticsModule.module,
+            CatalystRegenerationCycleModule.module,
+            DeactivatingPackedBedReactorModule.module,
+            CatalystTimeOnStreamModule.module,
             
             
 //          Fluid Mechanics

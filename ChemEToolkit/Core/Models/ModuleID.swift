@@ -195,4 +195,9 @@ enum ModuleID:
     case multipleReactionsCSTR
     case autocatalyticBatchReactor
     case semibatchReactor
+
+    case catalystDeactivationKinetics
+    case catalystRegenerationCycle
+    case deactivatingPackedBedReactor
+    case catalystTimeOnStream
 }
