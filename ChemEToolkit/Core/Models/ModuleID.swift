@@ -205,4 +205,9 @@ enum ModuleID:
     case enzymeBatchReactor
     case immobilizedEnzymeReactor
     case monodBioreactorDesign
+
+    case membraneReactor
+    case reactiveDistillationBasics
+    case reactorOptimization
+    case economicReactorSelection
 }

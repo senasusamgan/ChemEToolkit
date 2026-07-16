@@ -176,6 +176,10 @@ extension ModuleRegistry {
             EnzymeBatchReactorModule.module,
             ImmobilizedEnzymeReactorModule.module,
             MonodBioreactorDesignModule.module,
+            MembraneReactorModule.module,
+            ReactiveDistillationBasicsModule.module,
+            ReactorOptimizationModule.module,
+            EconomicReactorSelectionModule.module,
             
             
 //          Fluid Mechanics
