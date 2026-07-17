@@ -328,4 +328,22 @@ enum ModuleID:
     case significantFiguresRounding
     case engineeringPrefixConverter
     case weightedAverageProperty
+
+    case twoStreamMixerBalance
+    case streamSplitterBalance
+    case binarySeparatorBalance
+    case soluteDilutionCalculator
+    case recyclePurgeInertBalance
+    case bypassMixingBalance
+    case evaporatorBalance
+    case dryerBalance
+
+    case crystallizerBalance
+    case filterCakeBalance
+    case solidsWashingBalance
+    case gasAbsorberBalance
+    case liquidLiquidExtractionBalance
+    case membraneSeparatorBalance
+    case humidifierWaterBalance
+    case condenserBalance
 }
