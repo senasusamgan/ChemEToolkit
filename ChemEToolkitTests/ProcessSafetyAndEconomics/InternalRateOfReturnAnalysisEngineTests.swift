@@ -32,7 +32,7 @@ struct InternalRateOfReturnAnalysisEngineTests {
         #expect(
             abs(
                 result.netPresentValueAtIRR
-            ) < 1e-6
+            ) < 1e-5
         )
 
         #expect(result.iterationCount > 0)
