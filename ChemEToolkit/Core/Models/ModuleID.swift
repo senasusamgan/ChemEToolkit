@@ -250,4 +250,14 @@ enum ModuleID:
     case splitRangeControl
     case overrideSelectiveControl
     case smithPredictor
+
+    case internalModelControlAnalysis
+    case mimoDecouplingControl
+    case gainScheduling
+    case adaptiveControl
+
+    case modelPredictiveControl
+    case liquidControlValveSizing
+    case valveCharacteristics
+    case processControlStrategyComparison
 }

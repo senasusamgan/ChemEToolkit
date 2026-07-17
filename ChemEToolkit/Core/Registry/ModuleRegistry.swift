@@ -212,6 +212,14 @@ extension ModuleRegistry {
             SplitRangeControlModule.module,
             OverrideSelectiveControlModule.module,
             SmithPredictorModule.module,
+            InternalModelControlAnalysisModule.module,
+            MIMODecouplingControlModule.module,
+            GainSchedulingModule.module,
+            AdaptiveControlModule.module,
+            ModelPredictiveControlModule.module,
+            LiquidControlValveSizingModule.module,
+            ValveCharacteristicsModule.module,
+            ProcessControlStrategyComparisonModule.module,
             
             
 //          Fluid Mechanics
