@@ -391,4 +391,13 @@ enum ModuleID:
     case fenskeMinimumStages
     case binaryMinimumReflux
     case gillilandStageEstimate
+
+    case singleStageGasAbsorption
+    case absorptionStrippingFactors
+    case kremserAbsorptionStages
+    case kremserStrippingStages
+    case extractionDistributionSelectivity
+    case crosscurrentExtractionStages
+    case countercurrentExtractionStages
+    case extractionSolventRequirement
 }
