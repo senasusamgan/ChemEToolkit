@@ -300,4 +300,14 @@ enum ModuleID:
     case faultTreeProbability
     case sifAveragePFD
     case proofTestIntervalCalculator
+
+    case annualizedLossExpectancy
+    case riskReductionCostEffectiveness
+    case expectedMonetaryValueDecision
+    case lifecycleCostAnalysis
+
+    case individualRiskScreening
+    case societalRiskFNScreening
+    case alarpGrossDisproportionScreening
+    case safetyProjectPortfolioRanking
 }

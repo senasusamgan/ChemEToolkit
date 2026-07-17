@@ -252,6 +252,14 @@ extension ModuleRegistry {
             FaultTreeProbabilityModule.module,
             SIFAveragePFDModule.module,
             ProofTestIntervalCalculatorModule.module,
+            AnnualizedLossExpectancyModule.module,
+            RiskReductionCostEffectivenessModule.module,
+            ExpectedMonetaryValueDecisionModule.module,
+            LifecycleCostAnalysisModule.module,
+            IndividualRiskScreeningModule.module,
+            SocietalRiskFNScreeningModule.module,
+            ALARPGrossDisproportionScreeningModule.module,
+            SafetyProjectPortfolioRankingModule.module,
             
             
 //          Fluid Mechanics
