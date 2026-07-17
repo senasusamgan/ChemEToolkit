@@ -220,6 +220,10 @@ extension ModuleRegistry {
             LiquidControlValveSizingModule.module,
             ValveCharacteristicsModule.module,
             ProcessControlStrategyComparisonModule.module,
+            EquipmentCostScalingModule.module,
+            CostIndexEscalationModule.module,
+            LangFactorCapitalEstimateModule.module,
+            TotalCapitalInvestmentEstimateModule.module,
             
             
 //          Fluid Mechanics

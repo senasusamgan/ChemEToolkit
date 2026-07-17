@@ -260,4 +260,9 @@ enum ModuleID:
     case liquidControlValveSizing
     case valveCharacteristics
     case processControlStrategyComparison
+
+    case equipmentCostScaling
+    case costIndexEscalation
+    case langFactorCapitalEstimate
+    case totalCapitalInvestmentEstimate
 }
