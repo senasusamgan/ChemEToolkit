@@ -232,6 +232,14 @@ extension ModuleRegistry {
             BreakEvenProductionAnalysisModule.module,
             EquivalentAnnualWorthModule.module,
             EconomicSensitivityAnalysisModule.module,
+            FlammabilityMixtureLimitsModule.module,
+            GasReliefValveSizingModule.module,
+            LiquidReliefValveSizingModule.module,
+            ChemicalProcessRiskMatrixModule.module,
+            HAZOPGuideWordAssistantModule.module,
+            InherentlySaferDesignChecklistModule.module,
+            LayerOfProtectionAnalysisModule.module,
+            SafetyIntegrityLevelTargetModule.module,
             
             
 //          Fluid Mechanics

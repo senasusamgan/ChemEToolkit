@@ -275,4 +275,14 @@ enum ModuleID:
     case breakEvenProductionAnalysis
     case equivalentAnnualWorth
     case economicSensitivityAnalysis
+
+    case flammabilityMixtureLimits
+    case gasReliefValveSizing
+    case liquidReliefValveSizing
+    case chemicalProcessRiskMatrix
+
+    case hazopGuideWordAssistant
+    case inherentlySaferDesignChecklist
+    case layerOfProtectionAnalysis
+    case safetyIntegrityLevelTarget
 }
