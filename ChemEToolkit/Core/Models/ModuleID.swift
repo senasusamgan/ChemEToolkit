@@ -270,4 +270,9 @@ enum ModuleID:
     case straightLineDepreciation
     case netPresentValueAnalysis
     case paybackAndROIAnalysis
+
+    case internalRateOfReturnAnalysis
+    case breakEvenProductionAnalysis
+    case equivalentAnnualWorth
+    case economicSensitivityAnalysis
 }

@@ -228,6 +228,10 @@ extension ModuleRegistry {
             StraightLineDepreciationModule.module,
             NetPresentValueAnalysisModule.module,
             PaybackAndROIAnalysisModule.module,
+            InternalRateOfReturnAnalysisModule.module,
+            BreakEvenProductionAnalysisModule.module,
+            EquivalentAnnualWorthModule.module,
+            EconomicSensitivityAnalysisModule.module,
             
             
 //          Fluid Mechanics
