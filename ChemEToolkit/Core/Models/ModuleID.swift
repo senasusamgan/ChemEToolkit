@@ -265,4 +265,9 @@ enum ModuleID:
     case costIndexEscalation
     case langFactorCapitalEstimate
     case totalCapitalInvestmentEstimate
+
+    case annualOperatingCostEstimate
+    case straightLineDepreciation
+    case netPresentValueAnalysis
+    case paybackAndROIAnalysis
 }

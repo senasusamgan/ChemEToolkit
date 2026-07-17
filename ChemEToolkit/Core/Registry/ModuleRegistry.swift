@@ -224,6 +224,10 @@ extension ModuleRegistry {
             CostIndexEscalationModule.module,
             LangFactorCapitalEstimateModule.module,
             TotalCapitalInvestmentEstimateModule.module,
+            AnnualOperatingCostEstimateModule.module,
+            StraightLineDepreciationModule.module,
+            NetPresentValueAnalysisModule.module,
+            PaybackAndROIAnalysisModule.module,
             
             
 //          Fluid Mechanics
