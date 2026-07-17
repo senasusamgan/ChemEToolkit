@@ -248,6 +248,10 @@ extension ModuleRegistry {
             LiquidLeakRateScreeningModule.module,
             GaussianPlumeDispersionModule.module,
             ToxicExposureDoseScreeningModule.module,
+            EventTreeAnalysisModule.module,
+            FaultTreeProbabilityModule.module,
+            SIFAveragePFDModule.module,
+            ProofTestIntervalCalculatorModule.module,
             
             
 //          Fluid Mechanics

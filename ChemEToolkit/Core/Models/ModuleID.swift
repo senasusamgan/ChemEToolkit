@@ -295,4 +295,9 @@ enum ModuleID:
     case liquidLeakRateScreening
     case gaussianPlumeDispersion
     case toxicExposureDoseScreening
+
+    case eventTreeAnalysis
+    case faultTreeProbability
+    case sifAveragePFD
+    case proofTestIntervalCalculator
 }
