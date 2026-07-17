@@ -382,4 +382,13 @@ enum ModuleID:
     case nozzleDiffuserEnergyBalance
     case throttlingProcess
     case thermalEfficiencyCOP
+
+    case binaryRelativeVolatilityVLE
+    case raoultBubblePointPressure
+    case raoultDewPointPressure
+    case binaryIsothermalFlash
+    case binaryDistillationBalance
+    case fenskeMinimumStages
+    case binaryMinimumReflux
+    case gillilandStageEstimate
 }
