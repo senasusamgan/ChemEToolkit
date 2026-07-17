@@ -373,4 +373,13 @@ enum ModuleID:
     case clausiusClapeyronEstimator
     case vaporQualityFromEnthalpy
     case saturatedMixtureProperty
+
+    case closedSystemFirstLaw
+    case steadyFlowEnergyEquation
+    case turbineIsentropicEfficiency
+    case compressorIsentropicEfficiency
+    case pumpIsentropicEfficiency
+    case nozzleDiffuserEnergyBalance
+    case throttlingProcess
+    case thermalEfficiencyCOP
 }
