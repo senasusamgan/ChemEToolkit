@@ -346,4 +346,22 @@ enum ModuleID:
     case membraneSeparatorBalance
     case humidifierWaterBalance
     case condenserBalance
+
+    case sensibleHeatBalance
+    case phaseChangeEnergyBalance
+    case adiabaticMixingTemperature
+    case heatExchangerEnergyBalance
+    case limitingReactantExcess
+    case reactiveMaterialBalance
+    case combustionAirRequirement
+    case reactionPerformanceBalance
+
+    case reducedPropertiesCalculator
+    case daltonPartialPressure
+    case idealGasMixtureProperties
+    case isothermalIdealGasProcess
+    case isobaricIdealGasProcess
+    case isochoricIdealGasProcess
+    case adiabaticIdealGasProcess
+    case polytropicIdealGasProcess
 }
