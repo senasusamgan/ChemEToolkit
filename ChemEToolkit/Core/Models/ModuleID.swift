@@ -285,4 +285,9 @@ enum ModuleID:
     case inherentlySaferDesignChecklist
     case layerOfProtectionAnalysis
     case safetyIntegrityLevelTarget
+
+    case poolFireRadiationScreening
+    case bleveFireballScreening
+    case tntEquivalentExplosionScreening
+    case emergencyVentilationDilution
 }

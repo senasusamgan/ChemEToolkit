@@ -240,6 +240,10 @@ extension ModuleRegistry {
             InherentlySaferDesignChecklistModule.module,
             LayerOfProtectionAnalysisModule.module,
             SafetyIntegrityLevelTargetModule.module,
+            PoolFireRadiationScreeningModule.module,
+            BLEVEFireballScreeningModule.module,
+            TNTEquivalentExplosionScreeningModule.module,
+            EmergencyVentilationDilutionModule.module,
             
             
 //          Fluid Mechanics
