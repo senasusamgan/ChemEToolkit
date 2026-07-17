@@ -244,6 +244,10 @@ extension ModuleRegistry {
             BLEVEFireballScreeningModule.module,
             TNTEquivalentExplosionScreeningModule.module,
             EmergencyVentilationDilutionModule.module,
+            GasLeakRateScreeningModule.module,
+            LiquidLeakRateScreeningModule.module,
+            GaussianPlumeDispersionModule.module,
+            ToxicExposureDoseScreeningModule.module,
             
             
 //          Fluid Mechanics

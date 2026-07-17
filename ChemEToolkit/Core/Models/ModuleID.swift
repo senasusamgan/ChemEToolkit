@@ -290,4 +290,9 @@ enum ModuleID:
     case bleveFireballScreening
     case tntEquivalentExplosionScreening
     case emergencyVentilationDilution
+
+    case gasLeakRateScreening
+    case liquidLeakRateScreening
+    case gaussianPlumeDispersion
+    case toxicExposureDoseScreening
 }
