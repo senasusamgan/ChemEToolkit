@@ -364,4 +364,13 @@ enum ModuleID:
     case isochoricIdealGasProcess
     case adiabaticIdealGasProcess
     case polytropicIdealGasProcess
+
+    case enthalpyChangeCalculator
+    case internalEnergyChangeCalculator
+    case idealGasEntropyChange
+    case incompressibleEntropyChange
+    case antoineVaporPressure
+    case clausiusClapeyronEstimator
+    case vaporQualityFromEnthalpy
+    case saturatedMixtureProperty
 }
