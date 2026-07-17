@@ -310,4 +310,22 @@ enum ModuleID:
     case societalRiskFNScreening
     case alarpGrossDisproportionScreening
     case safetyProjectPortfolioRanking
+
+    case densitySpecificGravity
+    case massMoleConversion
+    case moleFractionCalculator
+    case massFractionCalculator
+    case averageMolecularWeight
+    case concentrationScaleConverter
+    case mixtureDensityCalculator
+    case standardGasFlowConverter
+
+    case chemicalFormulaMolecularWeight
+    case massFlowMolarFlowConversion
+    case volumetricMassFlowConversion
+    case binaryCompositionBasisConversion
+    case linearInterpolationCalculator
+    case significantFiguresRounding
+    case engineeringPrefixConverter
+    case weightedAverageProperty
 }
