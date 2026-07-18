@@ -409,4 +409,13 @@ enum ModuleID:
     case betMonolayerCapacity
     case adsorbentMassRequirement
     case fixedBedAdsorberBreakthrough
+
+    case idealGasMembraneStageCut
+    case gasMembraneAreaRequirement
+    case reverseOsmosisWaterFlux
+    case ultrafiltrationResistanceSeries
+    case coolingCrystallizerYield
+    case evaporativeCrystallizerBalance
+    case singleStageLeachingBalance
+    case batchSettlingAreaEstimate
 }
