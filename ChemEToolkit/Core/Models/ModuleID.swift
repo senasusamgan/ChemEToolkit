@@ -418,4 +418,13 @@ enum ModuleID:
     case evaporativeCrystallizerBalance
     case singleStageLeachingBalance
     case batchSettlingAreaEstimate
+
+    case packedColumnHTUNTU
+    case absorptionMinimumSolventRate
+    case strippingMinimumGasRate
+    case murphreeTrayEfficiency
+    case constantPressureFilterSizing
+    case centrifugeSigmaScaleUp
+    case cycloneCutDiameter
+    case hydrocycloneSeparationNumber
 }
