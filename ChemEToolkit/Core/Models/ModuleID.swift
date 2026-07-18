@@ -400,4 +400,13 @@ enum ModuleID:
     case crosscurrentExtractionStages
     case countercurrentExtractionStages
     case extractionSolventRequirement
+
+    case psychrometricAirEnthalpy
+    case psychrometricAirStreamMixing
+    case relativeHumidityHumidification
+    case combinedDryerTime
+    case dryerThermalDuty
+    case betMonolayerCapacity
+    case adsorbentMassRequirement
+    case fixedBedAdsorberBreakthrough
 }
