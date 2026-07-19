@@ -396,6 +396,14 @@ extension ModuleRegistry {
             
             
 //          Mass Transfer
+            PowerMethodEigenvalueModule.module,
+            InversePowerMethodEigenvalueModule.module,
+            AdaptiveRungeKutta45Module.module,
+            CoupledODESystemRK4Module.module,
+            ShootingMethodBoundaryValueModule.module,
+            GaussNewtonNonlinearRegressionModule.module,
+            RichardsonErrorEstimateModule.module,
+            GoldenSectionOptimizationModule.module,
             FicksFirstLawModule.module,
             DimensionlessMassTransferModule.module,
             SteadyStateDiffusionModule.module,

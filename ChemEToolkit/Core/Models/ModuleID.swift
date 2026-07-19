@@ -427,4 +427,13 @@ enum ModuleID:
     case centrifugeSigmaScaleUp
     case cycloneCutDiameter
     case hydrocycloneSeparationNumber
+
+    case powerMethodEigenvalue
+    case inversePowerMethodEigenvalue
+    case adaptiveRungeKutta45
+    case coupledODESystemRK4
+    case shootingMethodBoundaryValue
+    case gaussNewtonNonlinearRegression
+    case richardsonErrorEstimate
+    case goldenSectionOptimization
 }
