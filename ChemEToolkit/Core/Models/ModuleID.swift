@@ -436,4 +436,12 @@ enum ModuleID:
     case gaussNewtonNonlinearRegression
     case richardsonErrorEstimate
     case goldenSectionOptimization
+    case luDecompositionSolver
+    case choleskyDecompositionSolver
+    case qrDecompositionSolver
+    case thomasTridiagonalSolver
+    case conjugateGradientSolver
+    case newtonRaphsonNonlinearSystem
+    case broydenNonlinearSystem
+    case levenbergMarquardtRegression
 }
