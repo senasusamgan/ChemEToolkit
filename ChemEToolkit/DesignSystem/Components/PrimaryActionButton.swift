@@ -16,6 +16,13 @@ struct PrimaryActionButton: View {
         }
         .buttonStyle(.borderedProminent)
         .controlSize(.large)
+        .keyboardShortcut(
+            .return,
+            modifiers: .command
+        )
         .accessibilityLabel(title)
+        .accessibilityHint(
+            "Keyboard shortcut: Command-Return"
+        )
     }
 }

@@ -1,14 +1,75 @@
 import Foundation
 import SwiftUI
+
 struct OneDimensionalWaveEquationView: View {
- @State private var output:String?
- @State private var errorText:String?
- var body:some View { ScrollView { VStack(alignment:.leading,spacing:16) {
-  Text("One-Dimensional Wave Equation").font(.largeTitle.bold())
-  Text("Fixed-end sine mode with constant wave speed; CFL must not exceed one.").foregroundStyle(.secondary)
-  Button("Calculate Example"){calculate()}.buttonStyle(.borderedProminent)
-  if let output{Text("Result: \(output)").font(.headline)}
-  if let errorText{Text(errorText).foregroundStyle(.red)}
- }.padding() } }
- private func calculate(){do{let r=try OneDimensionalWaveEquationEngine().solve(.init(waveSpeed:1,length:1,totalTime:0.5,spatialNodes:51,timeSteps:50,initialAmplitude:1));output=String(format:"Center %.6g",r.displacements[r.displacements.count/2]);errorText=nil}catch{output=nil;errorText=error.localizedDescription}}
+    @State private var output: String?
+    @State private var errorText: String?
+
+    var body: some View {
+        ScrollView {
+            VStack(spacing: AppSpacing.xLarge) {
+                ModuleHeaderView(
+                    symbolName: "scope",
+                    title: "One-Dimensional Wave Equation",
+                    subtitle: "Simulate fixed-end vibration with an explicit finite-difference scheme."
+                )
+
+                CalculatorCard {
+                    VStack(
+                        alignment: .leading,
+                        spacing: AppSpacing.large
+                    ) {
+                        CalculatorInfoCard {
+                            Text("Example: propagate a sine-mode displacement on a unit domain while satisfying the CFL stability limit.")
+                        }
+
+                        PrimaryActionButton(
+                            title: "Calculate Example",
+                            systemImage: "play.fill",
+                            action: calculate
+                        )
+
+                        if let output {
+                            CalculationResultCard(items: [
+                                .init(
+                                    label: "Center displacement",
+                                    value: output,
+                                    unit: ""
+                                )
+                            ])
+                        }
+
+                        if let errorText {
+                            CalculationErrorCard(message: errorText)
+                        }
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .padding(AppSpacing.xLarge)
+        }
+    }
+
+    private func calculate() {
+        do {
+            let result = try OneDimensionalWaveEquationEngine().solve(
+                .init(
+                    waveSpeed: 1,
+                    length: 1,
+                    totalTime: 0.5,
+                    spatialNodes: 51,
+                    timeSteps: 50,
+                    initialAmplitude: 1
+                )
+            )
+            output = String(
+                format: "%.6g",
+                result.displacements[result.displacements.count / 2]
+            )
+            errorText = nil
+        } catch {
+            output = nil
+            errorText = error.localizedDescription
+        }
+    }
 }

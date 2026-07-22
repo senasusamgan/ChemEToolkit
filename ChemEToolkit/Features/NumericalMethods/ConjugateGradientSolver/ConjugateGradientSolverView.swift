@@ -9,21 +9,85 @@ struct ConjugateGradientSolverView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
-                Text("Conjugate Gradient Solver").font(.largeTitle.bold())
-                Text("The matrix must be symmetric positive definite. Initial guess is zero.").foregroundStyle(.secondary)
-                Group { Text("Matrix A (rows separated by ;)"); TextField("Matrix", text: $matrixText)
-                    Text("Vector b"); TextField("Vector", text: $vectorText) }.textFieldStyle(.roundedBorder)
-                Button("Calculate") { calculate() }.buttonStyle(.borderedProminent)
-                if let resultText { Text("Solution: \(resultText)").font(.headline) }
-                if let errorText { Text(errorText).foregroundStyle(.red) }
-            }.padding()
+            VStack(spacing: AppSpacing.xLarge) {
+                ModuleHeaderView(
+                    symbolName: "scope",
+                    title: "Conjugate Gradient Solver",
+                    subtitle: "Iteratively solve symmetric positive-definite linear systems."
+                )
+
+                CalculatorCard {
+                    VStack(alignment: .leading, spacing: AppSpacing.large) {
+                        CalculatorInfoCard {
+                            Text("The matrix must be symmetric positive definite. The initial guess is zero.")
+                        }
+
+                        EngineeringInputField(
+                            title: "Matrix A",
+                            symbol: "A",
+                            unit: "",
+                            placeholder: "4,1;1,3",
+                            text: $matrixText
+                        )
+
+                        EngineeringInputField(
+                            title: "Vector b",
+                            symbol: "b",
+                            unit: "",
+                            placeholder: "1,2",
+                            text: $vectorText
+                        )
+
+                        PrimaryActionButton(
+                            title: "Calculate",
+                            systemImage: "function",
+                            action: calculate
+                        )
+
+                        if let resultText {
+                            CalculationResultCard(items: [
+                                .init(label: "Solution", value: resultText, unit: "")
+                            ])
+                        }
+
+                        if let errorText {
+                            CalculationErrorCard(message: errorText)
+                        }
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity)
+            .padding(AppSpacing.xLarge)
         }
     }
-    private func parseVector(_ text: String) -> [Double] { text.split(separator: ",").compactMap { Double($0.trimmingCharacters(in: .whitespaces)) } }
-    private func parseMatrix(_ text: String) -> [[Double]] { text.split(separator: ";").map { parseVector(String($0)) } }
+
+    private func parseVector(_ text: String) -> [Double] {
+        text.split(separator: ",").compactMap {
+            Double($0.trimmingCharacters(in: .whitespaces))
+        }
+    }
+
+    private func parseMatrix(_ text: String) -> [[Double]] {
+        text.split(separator: ";").map { parseVector(String($0)) }
+    }
+
     private func calculate() {
-        do { let result = try ConjugateGradientSolverEngine().solve(.init(matrix: parseMatrix(matrixText), constants: parseVector(vectorText), initialGuess: Array(repeating: 0, count: parseVector(vectorText).count))); resultText = result.solution.map { String(format: "%.8g", $0) }.joined(separator: ", "); errorText = nil }
-        catch { resultText = nil; errorText = error.localizedDescription }
+        do {
+            let constants = parseVector(vectorText)
+            let result = try ConjugateGradientSolverEngine().solve(
+                .init(
+                    matrix: parseMatrix(matrixText),
+                    constants: constants,
+                    initialGuess: Array(repeating: 0, count: constants.count)
+                )
+            )
+            resultText = result.solution
+                .map { String(format: "%.8g", $0) }
+                .joined(separator: ", ")
+            errorText = nil
+        } catch {
+            resultText = nil
+            errorText = error.localizedDescription
+        }
     }
 }

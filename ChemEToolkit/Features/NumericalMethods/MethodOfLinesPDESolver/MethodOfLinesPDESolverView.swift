@@ -7,21 +7,46 @@ struct MethodOfLinesPDESolverView: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
-                Text("Method of Lines PDE Solver")
-                    .font(.largeTitle.bold())
-                Text("Solves one-dimensional diffusion with first-order reaction using central spatial differences and RK4 time integration.")
-                    .foregroundStyle(.secondary)
-                Button("Calculate Example") { calculate() }
-                    .buttonStyle(.borderedProminent)
-                if let output {
-                    Text("Result: \(output)").font(.headline)
-                }
-                if let errorText {
-                    Text(errorText).foregroundStyle(.red)
+            VStack(spacing: AppSpacing.xLarge) {
+                ModuleHeaderView(
+                    symbolName: "scope",
+                    title: "Method of Lines PDE Solver",
+                    subtitle: "Solve a diffusion-reaction PDE by spatial discretization and RK4 integration."
+                )
+
+                CalculatorCard {
+                    VStack(
+                        alignment: .leading,
+                        spacing: AppSpacing.large
+                    ) {
+                        CalculatorInfoCard {
+                            Text("Example: one-dimensional diffusion with first-order reaction, fixed boundaries, and a sine-pulse initial profile.")
+                        }
+
+                        PrimaryActionButton(
+                            title: "Calculate Example",
+                            systemImage: "play.fill",
+                            action: calculate
+                        )
+
+                        if let output {
+                            CalculationResultCard(items: [
+                                .init(
+                                    label: "Center concentration",
+                                    value: output,
+                                    unit: ""
+                                )
+                            ])
+                        }
+
+                        if let errorText {
+                            CalculationErrorCard(message: errorText)
+                        }
+                    }
                 }
             }
-            .padding()
+            .frame(maxWidth: .infinity)
+            .padding(AppSpacing.xLarge)
         }
     }
 
@@ -38,7 +63,10 @@ struct MethodOfLinesPDESolverView: View {
                     initialConcentration: 1
                 )
             )
-            output = String(format: "Center concentration %.8g", result.concentrations[result.concentrations.count / 2])
+            output = String(
+                format: "%.8g",
+                result.concentrations[result.concentrations.count / 2]
+            )
             errorText = nil
         } catch {
             output = nil

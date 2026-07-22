@@ -72,12 +72,7 @@ struct CalculationResultCard: View {
                 .multilineTextAlignment(.center)
 
             Text(item.value)
-                .font(
-                    .system(
-                        size: 32,
-                        weight: .bold
-                    )
-                )
+                .font(.largeTitle.bold())
                 .lineLimit(1)
                 .minimumScaleFactor(0.55)
 
@@ -89,7 +84,13 @@ struct CalculationResultCard: View {
         }
         .frame(maxWidth: .infinity)
         .accessibilityElement(
-            children: .combine
+            children: .ignore
+        )
+        .accessibilityLabel(item.label)
+        .accessibilityValue(
+            item.unit.isEmpty
+                ? item.value
+                : "\(item.value) \(item.unit)"
         )
     }
 }

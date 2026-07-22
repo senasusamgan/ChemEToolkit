@@ -39,6 +39,11 @@ struct EngineeringInputField: View {
                 .textFieldStyle(.roundedBorder)
                 .engineeringNumberKeyboard()
                 .accessibilityLabel(title)
+                .accessibilityHint(
+                    unit.isEmpty
+                        ? placeholder
+                        : "\(placeholder). Unit: \(unit)"
+                )
 
                 if !unit.isEmpty {
                     Text(unit)
