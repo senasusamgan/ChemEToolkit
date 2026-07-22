@@ -444,4 +444,12 @@ enum ModuleID:
     case newtonRaphsonNonlinearSystem
     case broydenNonlinearSystem
     case levenbergMarquardtRegression
+    case adaptiveSimpsonIntegration
+    case rombergIntegration
+    case gaussLegendreQuadrature
+    case monteCarloIntegration
+    case naturalCubicSplineInterpolation
+    case cubicHermiteInterpolation
+    case riddersRootFinder
+    case nelderMeadOptimization
 }
