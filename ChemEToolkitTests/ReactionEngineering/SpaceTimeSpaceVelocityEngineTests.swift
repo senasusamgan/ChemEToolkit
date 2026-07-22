@@ -71,9 +71,11 @@ struct SpaceTimeSpaceVelocityEngineTests {
             == result.spaceTimeSeconds
         )
         #expect(
-            result
-                .interstitialSpaceVelocityPerHour
-            == result.spaceVelocityPerHour
+            abs(
+                result
+                    .interstitialSpaceVelocityPerHour
+                - result.spaceVelocityPerHour
+            ) < 1e-12
         )
     }
 

@@ -1,6 +1,7 @@
 import Testing
 @testable import ChemEToolkit
 
+@MainActor
 @Suite("Convection Heat Transfer Engine")
 struct ConvectionHeatTransferEngineTests {
 

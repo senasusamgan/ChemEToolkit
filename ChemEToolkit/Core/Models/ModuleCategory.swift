@@ -11,6 +11,7 @@ enum ModuleCategory: String, CaseIterable, Codable, Hashable, Identifiable {
     case processControl
     case numericalMethods
     case processSafetyAndEconomics
+    case separationProcesses
 
     var id: String {
         rawValue
@@ -47,7 +48,9 @@ enum ModuleCategory: String, CaseIterable, Codable, Hashable, Identifiable {
 
         case .processSafetyAndEconomics:
             return "Process Safety & Economics"
-        }
+                    case .separationProcesses:
+                return "Separation Processes"
+}
     }
 
     var subtitle: String {
@@ -81,7 +84,9 @@ enum ModuleCategory: String, CaseIterable, Codable, Hashable, Identifiable {
 
         case .processSafetyAndEconomics:
             return "Safety analysis and economic evaluation"
-        }
+                    case .separationProcesses:
+                return "Distillation, absorption, extraction, membranes and drying"
+}
     }
 
     var symbolName: String {
@@ -115,7 +120,9 @@ enum ModuleCategory: String, CaseIterable, Codable, Hashable, Identifiable {
 
         case .processSafetyAndEconomics:
             return "shield.checkered"
-        }
+                    case .separationProcesses:
+                return "arrow.triangle.branch"
+}
     }
 
     var sortOrder: Int {
@@ -140,6 +147,8 @@ enum ModuleCategory: String, CaseIterable, Codable, Hashable, Identifiable {
             return 8
         case .processSafetyAndEconomics:
             return 9
-        }
+                    case .separationProcesses:
+                return 10
+}
     }
 }

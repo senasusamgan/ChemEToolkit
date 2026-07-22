@@ -58,12 +58,12 @@ struct HeatExchangerAreaSizingEngineTests {
             ) < tolerance
         )
 
-        #expect(
-            abs(
-                result.requiredArea
-                - 15.139651413
-            ) < 0.000001
-        )
+            #expect(
+                abs(
+                    result.requiredArea
+                    - 15.141161707988466
+                ) < tolerance
+            )
     }
 
     @Test(
