@@ -1,0 +1,8 @@
+import Foundation
+struct CrankNicolsonHeatEquationEngine{
+ func solve(_ input:CrankNicolsonHeatEquationInput)throws->CrankNicolsonHeatEquationResult{let raw=[input.thermalDiffusivity,input.length,input.totalTime,input.initialTemperature,input.leftBoundaryTemperature,input.rightBoundaryTemperature];guard raw.allSatisfy(\.isFinite)else{throw CrankNicolsonHeatEquationError.nonFiniteInput};guard input.thermalDiffusivity>0,input.length>0,input.totalTime>0 else{throw CrankNicolsonHeatEquationError.invalidPhysicalValues};guard input.spatialNodes>=3,input.timeSteps>=1 else{throw CrankNicolsonHeatEquationError.invalidGrid};let dx=input.length/Double(input.spatialNodes-1),dt=input.totalTime/Double(input.timeSteps),r=input.thermalDiffusivity*dt/(dx*dx),m=input.spatialNodes-2
+  var u=Array(repeating:input.initialTemperature,count:input.spatialNodes);u[0]=input.leftBoundaryTemperature;u[u.count-1]=input.rightBoundaryTemperature
+  for _ in 0..<input.timeSteps{var lower=Array(repeating:-r/2,count:max(0,m-1)),diag=Array(repeating:1+r,count:m),upper=lower,rhs=Array(repeating:0.0,count:m);for j in 0..<m{let i=j+1;rhs[j]=(r/2)*u[i-1]+(1-r)*u[i]+(r/2)*u[i+1]};rhs[0] += (r/2)*input.leftBoundaryTemperature;rhs[m-1] += (r/2)*input.rightBoundaryTemperature;if m>1{for i in 1..<m{let factor=lower[i-1]/diag[i-1];diag[i]-=factor*upper[i-1];rhs[i]-=factor*rhs[i-1]}};var interior=Array(repeating:0.0,count:m);interior[m-1]=rhs[m-1]/diag[m-1];if m>1{for i in stride(from:m-2,through:0,by:-1){interior[i]=(rhs[i]-upper[i]*interior[i+1])/diag[i]}};for j in 0..<m{u[j+1]=interior[j]};u[0]=input.leftBoundaryTemperature;u[u.count-1]=input.rightBoundaryTemperature}
+  return .init(positions:(0..<input.spatialNodes).map{Double($0)*dx},temperatures:u,fourierNumber:r,timeStep:dt)
+ }
+}

@@ -1,0 +1,7 @@
+import Foundation
+struct LaplaceEquationFiniteDifferenceEngine{
+ func solve(_ input:LaplaceEquationFiniteDifferenceInput)throws->LaplaceEquationFiniteDifferenceResult{guard input.rows>=3,input.columns>=3 else{throw LaplaceEquationFiniteDifferenceError.invalidGrid};let bounds=[input.topBoundary,input.bottomBoundary,input.leftBoundary,input.rightBoundary];guard bounds.allSatisfy(\.isFinite)else{throw LaplaceEquationFiniteDifferenceError.nonFiniteInput};guard input.tolerance.isFinite,input.tolerance>0,input.maximumIterations>0 else{throw LaplaceEquationFiniteDifferenceError.invalidControls};let mean=bounds.reduce(0,+)/4;var f=Array(repeating:Array(repeating:mean,count:input.columns),count:input.rows)
+  for c in 0..<input.columns{f[0][c]=input.topBoundary;f[input.rows-1][c]=input.bottomBoundary};for r in 0..<input.rows{f[r][0]=input.leftBoundary;f[r][input.columns-1]=input.rightBoundary};f[0][0]=(input.topBoundary+input.leftBoundary)/2;f[0][input.columns-1]=(input.topBoundary+input.rightBoundary)/2;f[input.rows-1][0]=(input.bottomBoundary+input.leftBoundary)/2;f[input.rows-1][input.columns-1]=(input.bottomBoundary+input.rightBoundary)/2
+  for iteration in 1...input.maximumIterations{var maximum=0.0;for r in 1..<(input.rows-1){for c in 1..<(input.columns-1){let next=(f[r-1][c]+f[r+1][c]+f[r][c-1]+f[r][c+1])/4;maximum=max(maximum,abs(next-f[r][c]));f[r][c]=next}};if maximum<=input.tolerance{return .init(field:f,iterations:iteration,maximumChange:maximum,converged:true)}};throw LaplaceEquationFiniteDifferenceError.didNotConverge
+ }
+}

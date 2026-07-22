@@ -1,0 +1,1 @@
+struct CrankNicolsonHeatEquationInput:Equatable,Sendable{let thermalDiffusivity:Double;let length:Double;let totalTime:Double;let spatialNodes:Int;let timeSteps:Int;let initialTemperature:Double;let leftBoundaryTemperature:Double;let rightBoundaryTemperature:Double}

@@ -452,4 +452,12 @@ enum ModuleID:
     case cubicHermiteInterpolation
     case riddersRootFinder
     case nelderMeadOptimization
+    case highOrderFiniteDifference
+    case numericalJacobian
+    case gradientDescentOptimization
+    case newtonMultivariableOptimization
+    case adamsBashforthMoulton
+    case crankNicolsonHeatEquation
+    case laplaceEquationFiniteDifference
+    case oneDimensionalWaveEquation
 }
