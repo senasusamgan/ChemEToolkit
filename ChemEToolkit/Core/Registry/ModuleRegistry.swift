@@ -428,6 +428,7 @@ extension ModuleRegistry {
             CrankNicolsonHeatEquationModule.module,
             LaplaceEquationFiniteDifferenceModule.module,
             OneDimensionalWaveEquationModule.module,
+            MethodOfLinesPDESolverModule.module,
             FicksFirstLawModule.module,
             DimensionlessMassTransferModule.module,
             SteadyStateDiffusionModule.module,

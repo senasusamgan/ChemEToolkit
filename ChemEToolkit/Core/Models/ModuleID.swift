@@ -460,4 +460,5 @@ enum ModuleID:
     case crankNicolsonHeatEquation
     case laplaceEquationFiniteDifference
     case oneDimensionalWaveEquation
+    case methodOfLinesPDESolver
 }
